@@ -86,7 +86,7 @@ IRIS Studio Tutorial - 서울시 공중화장실 분포 지도
 
 |
 
-.. image:: ./images_RST/studio_tutorial/raw_seoul_data.png
+.. image:: ./../../images/map_seoul/raw_seoul_data.png
     :height: 450
     :width: 800
     :scale: 100%
