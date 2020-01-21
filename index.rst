@@ -1,7 +1,7 @@
-IRIS Tutorial
+IRIS Usecase
 ====================
 
-IRIS Tutorial
+IRIS Usecase
 
 .. toctree::
 
