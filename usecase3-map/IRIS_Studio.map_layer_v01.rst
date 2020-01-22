@@ -113,16 +113,18 @@ IRIS Studio : 지도 예제
 |
 
 - 아이템 선택을 위한 체크 박스 만들기 : 주차장, 어린이보호구역, 공공시설개방, CCTV, 보안등정보
-    
     - 한 개의 layer에 1개의 아이템을 선정한다.
 
 .. image:: ../images/map_suwon/sw_chb_1.png
+    :height: 220
+    :width: 300
+    :scale: 100%
     :alt: 체크박스_1
 
 |
 
 .. image:: ../images/map_suwon/sw_chb_2.png
-    :height: 400
+    :height: 200
     :width: 300
     :scale: 100%
     :alt: 체크박스_2
@@ -168,6 +170,9 @@ IRIS Studio : 지도 예제
 - 각 레이어의 마커 색깔 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
+    :height: 100
+    :width: 200
+    :scale: 100%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
