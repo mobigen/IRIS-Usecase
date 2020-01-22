@@ -55,7 +55,7 @@ IRIS Studio - 수원시 공공 데이터를 map 에 표시
 
 |
 
-.. image:: ../images/map_suwon/최종1.png
+.. image:: ../images/map_suwon/last1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -85,8 +85,8 @@ IRIS Studio : 지도 예제
 - text 박스에 text 설명 추가하기
 
 .. image:: ../images/map_suwon/sw_text01.png
-    :height: 450
-    :width: 800
+    :height: 250
+    :width: 600
     :scale: 100%
     :alt: 새보고서
 
@@ -106,7 +106,7 @@ IRIS Studio : 지도 예제
 
 .. image:: ../images/map_suwon/sw_layer_add_1.png
     :height: 250
-    :width: 800
+    :width: 700
     :scale: 100%
     :alt: map layer add
 
@@ -169,13 +169,13 @@ IRIS Studio : 지도 예제
 
 - 각 레이어의 마커 색깔 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
 
-.. image:: ../images/map_suwon/범례.png
+.. image:: ../images/map_suwon/desc1.png
     :scale: 100%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
-.. image:: ../images/map_suwon/범례2.png
+.. image:: ../images/map_suwon/desc2.png
     :height: 250
     :width: 300
     :scale: 100%
@@ -183,13 +183,13 @@ IRIS Studio : 지도 예제
 
 - 메뉴바에서 텍스트상자 클릭
 
-.. image:: ../images/map_suwon/범례3.png
+.. image:: ../images/map_suwon/desc3.png
     :scale: 100%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
-.. image:: ../images/map_suwon/주차장범례속성.png
+.. image:: ../images/map_suwon/parking_att.png
     :height: 250
     :width: 300
     :scale: 100%
@@ -197,7 +197,7 @@ IRIS Studio : 지도 예제
 
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
 
-.. image:: ../images/map_suwon/사각형속성.png
+.. image:: ../images/map_suwon/polygon4_att.png
     :height: 250
     :width: 300
     :scale: 100%
@@ -207,7 +207,7 @@ IRIS Studio : 지도 예제
 
 - 최종 보기
 
-.. image:: ../images/map_suwon/최종.png
+.. image:: ../images/map_suwon/sw_last.png
     :height: 450
     :width: 800
     :scale: 100%

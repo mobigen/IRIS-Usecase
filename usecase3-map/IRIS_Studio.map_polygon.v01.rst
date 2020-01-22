@@ -245,7 +245,7 @@ IMPORT  Data  to IRIS DB
 
 -  데이터 추가 메뉴 
 
-.. image:: ../images/map_seoul/데이터메뉴.png
+.. image:: ../images/map_seoul/datamenu.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -255,7 +255,7 @@ IMPORT  Data  to IRIS DB
 
 - 데이터 선택
 
-.. image:: ../images/map_seoul/데이터추가_1.png
+.. image:: ../images/map_seoul/dataadd_1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -265,7 +265,7 @@ IMPORT  Data  to IRIS DB
 
 - 데이터 가공
 
-.. image:: ../images/map_seoul/데이터추가_가공_데이터확인.png
+.. image:: ../images/map_seoul/dataadd_proc.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -275,7 +275,7 @@ IMPORT  Data  to IRIS DB
 
 - 데이터 가공 : GPS 좌표 데이터 유형 변경(Text -> Real)
 
-.. image:: ../images/map_seoul/데이터유형변경탭2.png
+.. image:: ../images/map_seoul/data_type_2.png
     :height: 350
     :width: 400
     :scale: 100%
@@ -285,7 +285,7 @@ IMPORT  Data  to IRIS DB
 
 - 데이터 입력 설정하기 : IRIS DB 테이블 설정(파티션 키, 파티션 구분 컬럼 지정)
 
-.. image:: ../images/map_seoul/데이터테이블설정화면.png
+.. image:: ../images/map_seoul/datatable1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -295,7 +295,7 @@ IMPORT  Data  to IRIS DB
 
 - 데이터 제출하기
 
-.. image:: ../images/map_seoul/데이터제출화면_1.png
+.. image:: ../images/map_seoul/datapull_1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -305,7 +305,7 @@ IMPORT  Data  to IRIS DB
 
 | 입력이 정상적으로 완료된 경우의 화면
 
-.. image:: ../images/map_seoul/데이터제출화면_2.png
+.. image:: ../images/map_seoul/datapull_2.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -315,7 +315,7 @@ IMPORT  Data  to IRIS DB
 
 - DB브라우저 메뉴에서 입력한 IRIS table 데이터 조회하기
 
-.. image:: ../images/map_seoul/디비브라우저_확인.png
+.. image:: ../images/map_seoul/db_call.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -340,7 +340,7 @@ IRIS Studio
 - 날짜 박스를 선택하면 날짜박스의 속성을 설정할 수 있다.
     - 현재 데이터는 1개의 날짜  2019-12-30 데이터만 있음
 
-.. image:: ../images/map_seoul/날짜속성.png
+.. image:: ../images/map_seoul/datetime.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -350,7 +350,7 @@ IRIS Studio
 
 - 날짜 데이터의 시각화 옵션 
 
-.. image:: ../images/map_seoul/날짜시각화옵션.png
+.. image:: ../images/map_seoul/dateopt.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -362,7 +362,7 @@ IRIS Studio
 
 - 범위 선택을 위한 콤보 박스 만들기 : 50미터, 100미터 범위를 콤보박스에서 선택하게 한다.
 
-.. image:: ../images/map_seoul/콤보박스.png
+.. image:: ../images/map_seoul/com.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -379,7 +379,7 @@ map layer 1
 
 - layer map(지도) : open street map 선택
 
-.. image:: ../images/map_seoul/지도_1.png
+.. image:: ../images/map_seoul/map_1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -391,7 +391,7 @@ map layer 1
 - 지도의 기본 위치로 서울이 오도록 한 후 기본값 설정
 - 레이어 3개 설정
 
-.. image:: ../images/map_seoul/지도3_1.png
+.. image:: ../images/map_seoul/map3_1.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -409,7 +409,7 @@ map layer 2
     - 데이터 설정
     - DB 테이블에서 화장실별 위/경도를 select 해온다.
 
-.. image:: ../images/map_seoul/지도_4.png
+.. image:: ../images/map_seoul/map_4.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -421,7 +421,7 @@ map layer 2
 - point 레이어의 시각화 설정
     - 마커의 시각화 옵션 : 위/경도 표시 마커에 대한 색깔, 크기와 툴팁 컬럼 지정
 
-.. image:: ../images/map_seoul/지도_5.png
+.. image:: ../images/map_seoul/map_5.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -433,7 +433,7 @@ map layer 2
 
 - 설정값에 따라 나온 지도
 
-.. image:: ../images/map_seoul/지도_6.png
+.. image:: ../images/map_seoul/map_6.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -473,7 +473,7 @@ map layer 3
 
 - range 레이어 설정
 
-.. image:: ../images/map_seoul/지도7.png
+.. image:: ../images/map_seoul/map7.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -484,7 +484,7 @@ map layer 3
 
 - 100 미터 range 일 때
 
-.. image:: ../images/map_seoul/지도8.png
+.. image:: ../images/map_seoul/map8.png
     :height: 450
     :width: 800
     :scale: 100%
@@ -500,7 +500,7 @@ map layer 3
 
 - 확대 : 50 미터
 
-.. image:: ../images/map_seoul/지도10.png
+.. image:: ../images/map_seoul/map10.png
     :height: 550
     :width: 800
     :scale: 100%
@@ -509,7 +509,7 @@ map layer 3
 
 - 확대 : 100 미터
 
-.. image:: ../images/map_seoul/지도11.png
+.. image:: ../images/map_seoul/map11.png
     :height: 550
     :width: 800
     :scale: 100%
