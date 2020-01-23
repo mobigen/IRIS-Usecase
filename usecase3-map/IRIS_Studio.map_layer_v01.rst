@@ -189,23 +189,23 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
 .. image:: ../images/map_suwon/desc2.png
-    :height: 150
-    :width: 300
+    :height: 100
+    :width: 250
     :scale: 100%
     :alt: layer_1 마커
 
 - 메뉴바에서 **텍스트상자** 클릭
 
 .. image:: ../images/map_suwon/desc3.png
-    :height: 50
-    :width: 300
+    :height: 20
+    :width: 200
     :scale: 100%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
 .. image:: ../images/map_suwon/parking_att.png
-    :height: 200
+    :height: 150
     :width: 300
     :scale: 100%
     :alt: 주차장범례 속성
@@ -213,7 +213,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
 
 .. image:: ../images/map_suwon/polygon4_att.png
-    :height: 250
+    :height: 150
     :width: 300
     :scale: 100%
     :alt: 주차장범례 속성
