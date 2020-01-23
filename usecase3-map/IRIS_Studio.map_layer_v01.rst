@@ -73,7 +73,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 '''''''''''''''''''''''''''''''''''''''''
 
 - 보고서 메뉴에서 **새보고서** 클릭
-
+    
 .. image:: ../images/map_suwon/sw_4.png
     :height: 250
     :width: 800
@@ -82,7 +82,8 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 |
 
-- text 박스에 text 설명 추가하기
+- 텍스트 박스에 내용 추가하기
+    - 텍스트 박스에 내용을 추가하는 것은 오른쪽 **속성**의 **기본값** 에 입력한다.
 
 .. image:: ../images/map_suwon/sw_text01.png
     :height: 250
@@ -92,7 +93,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 - 첫번째 layer map(지도) : open street map 선택
-- 지도의 기본 위치로 **수원** 이 오도록 한 후 이 값으로 **지도의 기본값 설정하기**
+- 지도의 기본 위치로 **수원** 이 오도록 한 후 이 값으로 **현재 지도값으로 설정** 하기
 
 .. image:: ../images/map_suwon/sw_map_layer.png
     :height: 450
@@ -102,7 +103,9 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 |
 
-- 레이어 5개를 추가로 설정한다. 각각 보여주려는 아이템 이름으로 layer 이름을 정한다.
+- 레이어 5개를 추가로 설정한다. 
+
+    - 각각 보여주려는 아이템 이름으로 layer 이름을 정한다.(권장)
 
 .. image:: ../images/map_suwon/sw_layer_add_1.png
     :height: 250
@@ -112,11 +115,13 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 |
 
 - 아이템 선택을 위한 **체크 박스** 만들기 : 주차장, 어린이보호구역, 공공시설개방, CCTV, 보안등정보
-    - 한 개의 layer에 1개의 아이템을 선정한다.
+    
+    - 한 개의 체크박스에 1개의 layer 를 선택하도록 총 5개의 체크박스를 따로 만든다.
 
 .. image:: ../images/map_suwon/sw_chb_1.png
     :height: 220
     :width: 400
+    :scale: 100%
     :alt: 체크박스_1
 
 |
@@ -124,10 +129,18 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 .. image:: ../images/map_suwon/sw_chb_2.png
     :height: 200
     :width: 400
+    :scale: 100%
     :alt: 체크박스_2
 
+|
 
-- 먼저 주차장 layer 의 데이터를 가져오기 위한 설정값 입력
+- 수시로 **저장** !!!!
+
+- 다시 **지도** 를 선택
+
+- 주차장 layer 의 데이터를 가져오기 위한 설정값 입력한다.
+  
+    - IRIS DB 테이블에서 select 하는 SQL문을 오른쪽 **검색어** 에 입력한 후 **미리보기**로 확인한다.
 
 .. image:: ../images/map_suwon/sw_layer1_1.png
     :height: 450
@@ -137,7 +150,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 |
 
-- 주차장 layer 의 데이터는 주차장 체크박스에서 선택되면 실행되도록 트리거 설정한다.
+- 주차장 layer 의 데이터는 **주차장 체크박스**에서 선택되면 실행되도록 트리거 설정한다.
 
 
 .. image:: ../images/map_suwon/sw_layer2_1.png
@@ -164,11 +177,12 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 |
 |
 
-- 각 레이어의 마커 색상 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
+- 각 레이어의 마커 색상 정보를 보기 쉽게 하기 위해 **범례**를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
     :height: 50
     :width: 300
+    :scale: 100%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
@@ -176,16 +190,23 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 .. image:: ../images/map_suwon/desc2.png
     :height: 150
     :width: 300
+    :scale: 100%
     :alt: layer_1 마커
 
-- 메뉴바에서 텍스트상자 클릭
+- 메뉴바에서 **텍스트상자** 클릭
 
 .. image:: ../images/map_suwon/desc3.png
+    :height: 50
+    :width: 300
+    :scale: 100%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
 .. image:: ../images/map_suwon/parking_att.png
+    :height: 200
+    :width: 300
+    :scale: 100%
     :alt: 주차장범례 속성
 
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
@@ -210,6 +231,8 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 |
 
 - 참고로 현재 체크박스에서 선택을 삭제해도 지도에서는 마커가 그대로 보이므로, 
+   
     - re-load 하여 다시 체크박스에서 선택하거나
+   
     - 지도의 레이어팝업 창에서 레이어별로 보기를 선택하는 방법을 사용해야 한다.
 
