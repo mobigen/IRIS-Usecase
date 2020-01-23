@@ -64,15 +64,15 @@ IRIS Studio - 수원시 공공 데이터를 map 에 표시
 |
 |
 
-----------------------------------
-IRIS Studio : 지도 예제
-----------------------------------
+---------------------------------------------------------------
+IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기 
+---------------------------------------------------------------
 
 '''''''''''''''''''''''''''''''''''''''''
-새 보고서 
+새 보고서 생성하기  
 '''''''''''''''''''''''''''''''''''''''''
 
-- 보고서 메뉴에서 새보고서 클릭
+- 보고서 메뉴에서 **새보고서** 클릭
 
 .. image:: ../images/map_suwon/sw_4.png
     :height: 250
@@ -92,7 +92,7 @@ IRIS Studio : 지도 예제
 
 
 - 첫번째 layer map(지도) : open street map 선택
-- 지도의 기본 위치로 수원이 오도록 한 후 이 값으로 지도의 기본값 설정하기
+- 지도의 기본 위치로 **수원** 이 오도록 한 후 이 값으로 **지도의 기본값 설정하기**
 
 .. image:: ../images/map_suwon/sw_map_layer.png
     :height: 450
@@ -107,26 +107,23 @@ IRIS Studio : 지도 예제
 .. image:: ../images/map_suwon/sw_layer_add_1.png
     :height: 250
     :width: 700
-    :scale: 100%
     :alt: map layer add
 
 |
 
-- 아이템 선택을 위한 체크 박스 만들기 : 주차장, 어린이보호구역, 공공시설개방, CCTV, 보안등정보
+- 아이템 선택을 위한 **체크 박스** 만들기 : 주차장, 어린이보호구역, 공공시설개방, CCTV, 보안등정보
     - 한 개의 layer에 1개의 아이템을 선정한다.
 
 .. image:: ../images/map_suwon/sw_chb_1.png
     :height: 220
-    :width: 300
-    :scale: 100%
+    :width: 400
     :alt: 체크박스_1
 
 |
 
 .. image:: ../images/map_suwon/sw_chb_2.png
     :height: 200
-    :width: 300
-    :scale: 100%
+    :width: 400
     :alt: 체크박스_2
 
 
@@ -170,31 +167,25 @@ IRIS Studio : 지도 예제
 - 각 레이어의 마커 색깔 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
-    :height: 100
+    :height: 80
     :width: 200
-    :scale: 100%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
 .. image:: ../images/map_suwon/desc2.png
-    :height: 250
+    :height: 200
     :width: 300
-    :scale: 100%
     :alt: layer_1 마커
 
 - 메뉴바에서 텍스트상자 클릭
 
 .. image:: ../images/map_suwon/desc3.png
-    :scale: 100%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
 .. image:: ../images/map_suwon/parking_att.png
-    :height: 250
-    :width: 300
-    :scale: 100%
     :alt: 주차장범례 속성
 
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
