@@ -164,17 +164,17 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 |
 |
 
-- 각 레이어의 마커 색깔 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
+- 각 레이어의 마커 색상 정보를 보기 쉽게 하기 위해 범례를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
-    :height: 80
-    :width: 200
+    :height: 50
+    :width: 300
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
 .. image:: ../images/map_suwon/desc2.png
-    :height: 200
+    :height: 150
     :width: 300
     :alt: layer_1 마커
 
