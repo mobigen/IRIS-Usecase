@@ -87,9 +87,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 텍스트 박스에 내용을 추가하는 것은 오른쪽 **속성** 의 **기본값** 에 입력한다.
 
 .. image:: ../images/map_suwon/sw_text01.png
-    :height: 250
-    :width: 600
-    :scale: 100%
     :alt: 새보고서
 
 
