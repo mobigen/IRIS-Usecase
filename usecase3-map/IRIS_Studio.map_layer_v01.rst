@@ -128,8 +128,8 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 |
 
 .. image:: ../images/map_suwon/sw_chb_2.png
-    :height: 200
-    :width: 400
+    :height: 300
+    :width: 600
     :scale: 100%
     :alt: 체크박스_2
 
@@ -163,15 +163,87 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 |
 
-- 주차장의 위/경도 좌표를 마커(점) 으로 표시하고, 색상을 지정한다.
-
-- 마커에 해당하는 컬럼과 커서를 대면 **툴팁** 으로 표시될 컬럼을 지정한다.
-
+- 주차장 layer 의 시각화 설정하기
+    - 시각화 유형은 위/경도 좌표를 마커(점) 으로 표시하기
+    
 .. image:: ../images/map_suwon/sw_layer3.png
     :height: 450
     :width: 800
     :scale: 100%
     :alt: layer_1 마커
+
+- 마커의 시각화 옵션 설정하기
+    - 마커의 종류 및 갯수, 마커의 크기 지정
+
+.. image:: ../images/map_suwon/sw_layer_mk_size.png
+    :scale: 100%
+    :alt: layer_1 마커 사이즈
+
+|
+
+- 마커의 색상 설정 : 주차장의 색상을 정하는 컬럼(여기서는 PARTITION_DATE 를 지정함)에 따라 그라디언트로 표현한다.
+    - 임계치 및 객체별 자동은 데이터 및 case 에 따라 지정할 수 있으므로 사용자 메뉴얼을 참고할 것
+
+.. image:: ../images/map_suwon/sw_layer_mk_color.png
+    :scale: 100%
+    :alt: layer_1 마커 색상
+
+|
+
+- 마커의 데이터 설정 : 마커의 위/경도에 해당하는 컬럼을 지정한다.
+    - 색상 컬럼은 group by 절의 컬럼 에 해당하며, 주차장 마커의 색상을 다르게 표현하고 샆을 때 사용한다.
+    - 마커 색상 탭에서 그라디언트로 지정한 색상에 따라 주차장 마커 색이 표현된다.
+    - 여기서는 모두 동일한 날짜의 데이터이므로 주차장 마커의 색은 같은 색상이다.
+    
+.. image:: ../images/map_suwon/sw_layer_mk_data.png
+    :scale: 100%
+    :alt: layer_1 데이터
+
+|
+
+- 마커의 툴팁 설정 : 지도에서 특정 주차장 마커에 커서를 대면 보이는 정보를 설정한다.
+    - 만약 컬럼이 보이지 않으면 **실행** 버튼을 눌러서 지도에 주차장 마커가 표시되게 한다.
+    - 그 후에 마커의 시각화 옵션의 툴팁 설정 창을 열면 툴팁으로 보여 줄 수 있는 컬럼이 보인다.
+    - 이 컬럼은 지도의 데이터 항목에서 IRIS DB 에 보낸 SQL구문의 컬럼들이다.
+
+.. code::
+
+    /*+ LOCATION ( PARTITION = '20191017000000' ) */ 
+    SELECT 
+	    PARTITION_DATE, 
+        PARKING_PLACE_NAME as FACILITY_NAME, 
+        PARKING_PLACE_MANAGEMENT_NUMBER,
+        PARKING_PLACE_SECTION, PARKING_PLACE_TYPE,
+        PLACE_OF_LOCATION_ROAD_NAME_ADDRESS as ADDRESS,  
+        PARKING_COMPARTMENT_COUNT, OPERATION_DAY,
+        WEEKDAY_OPERATION_BEGIN_TIME, WEEKDAY_OPERATION_END_TIME, 
+        SATURDAY_OPERATION_BEGIN_TIME, SATURDAY_OPERATION_END_TIME, 
+        HOLIDAY_OPERATION_BEGIN_TIME, HOLIDAY_OPERATION_END_TIME, 
+        CHARGE_INFORMATION, PARKING_BASIS_TIME, PARKING_BASIS_CHARGE, 
+        ADDITION_UNIT_TIME, ADDITION_UNIT_CHARGE, DAY_PARKING_TICKET_CHARGE_APPLICATION_TIME, 
+        DAY_PARKING_TICKET_CHARGE, MONTH_FIXED_TERM_TICKET_CHARGE, PAY_METHOD, SPECIAL_MATTER, 
+        MANAGEMENT_INSTITUTION_NAME, TELEPHONE_NUMBER,
+        LATITUDE, LONGITUDE
+    FROM 
+	    JPHONG.SUWON_PARKING_PLACE_INFORMATION
+    ;
+
+
+
+.. image:: ../images/map_suwon/sw_layer_mk_tt.png
+    :scale: 100%
+    :alt: layer_1 마커 툴팁
+
+|
+
+- 툴팁 실행 예시
+
+.. image:: ../images/map_suwon/sw_layer_mk_tt_2.png
+    :height: 450
+    :width: 800
+    :scale: 100%
+    :alt: layer_1 툴팁 예시
+
 
 - 동일한 방법으로 나머지 어린이보호구역/공공시설개방/CCTV/보안등정보 레이어를 생성한다.
 
@@ -227,7 +299,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     :width: 800
     :scale: 100%
     :alt: 최종
-
 
 |
 
