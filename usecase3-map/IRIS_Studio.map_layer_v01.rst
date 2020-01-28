@@ -160,6 +160,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 |
 
+
 - 주차장 layer 의 시각화 설정하기
     - 시각화 유형은 위/경도 좌표를 마커(점) 으로 표시하기
     
@@ -169,11 +170,12 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     :scale: 100%
     :alt: layer_1 마커
 
+|
+
 - 마커의 시각화 옵션 설정하기
     - 마커의 종류 및 갯수, 마커의 크기 지정
 
 .. image:: ../images/map_suwon/sw_layer_mk_size.png
-    :scale: 100%
     :alt: layer_1 마커 사이즈
 
 |
@@ -182,16 +184,17 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 임계치 및 객체별 자동은 데이터 및 case 에 따라 지정할 수 있으므로 사용자 메뉴얼을 참고할 것
 
 .. image:: ../images/map_suwon/sw_layer_mk_color.png
-    :scale: 100%
     :alt: layer_1 마커 색상
 
 |
+
 
 - 마커의 데이터 설정 : 마커의 위/경도에 해당하는 컬럼을 지정한다.
     - 색상 컬럼은 group by 절의 컬럼 에 해당하며, 주차장 마커의 색상을 다르게 표현하고 샆을 때 사용한다.
     - 마커 색상 탭에서 그라디언트로 지정한 색상에 따라 주차장 마커 색이 표현된다.
     - 여기서는 모두 동일한 날짜의 데이터이므로 주차장 마커의 색은 같은 색상이다.
-    
+
+
 .. image:: ../images/map_suwon/sw_layer_mk_data.png
     :scale: 100%
     :alt: layer_1 데이터
