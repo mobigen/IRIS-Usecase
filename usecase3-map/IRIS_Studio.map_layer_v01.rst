@@ -117,17 +117,11 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 한 개의 체크박스에 1개의 layer 를 선택하도록 총 5개의 체크박스를 따로 만든다.
 
 .. image:: ../images/map_suwon/sw_chb_1.png
-    :height: 220
-    :width: 400
-    :scale: 100%
     :alt: 체크박스_1
 
 |
 
 .. image:: ../images/map_suwon/sw_chb_2.png
-    :height: 300
-    :width: 600
-    :scale: 100%
     :alt: 체크박스_2
 
 |
@@ -141,9 +135,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - IRIS DB 테이블에서 select 하는 SQL문을 오른쪽 **검색어** 에 입력한 후 **미리보기** 로 확인한다.
 
 .. image:: ../images/map_suwon/sw_layer1_1.png
-    :height: 450
-    :width: 800
-    :scale: 100%
     :alt: layer_1 data
 
 |
@@ -152,9 +143,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 .. image:: ../images/map_suwon/sw_layer2_1.png
-    :height: 450
-    :width: 800
-    :scale: 100%
     :alt: layer_1 ch
 
 
@@ -165,9 +153,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 시각화 유형은 위/경도 좌표를 마커(점) 으로 표시하기
     
 .. image:: ../images/map_suwon/sw_layer3.png
-    :height: 450
-    :width: 800
-    :scale: 100%
     :alt: layer_1 마커
 
 |
@@ -196,7 +181,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 .. image:: ../images/map_suwon/sw_layer_mk_data.png
-    :scale: 100%
     :alt: layer_1 데이터
 
 |
@@ -231,7 +215,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 .. image:: ../images/map_suwon/sw_layer_mk_tt.png
-    :scale: 100%
     :alt: layer_1 마커 툴팁
 
 |
@@ -239,9 +222,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 툴팁 실행 예시
 
 .. image:: ../images/map_suwon/sw_layer_mk_tt_2.png
-    :height: 450
-    :width: 800
-    :scale: 100%
     :alt: layer_1 툴팁 예시
 
 
@@ -253,41 +233,26 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 각 레이어의 마커 색상 정보를 보기 쉽게 하기 위해 **범례** 를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
-    :height: 50
-    :width: 300
-    :scale: 100%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
 .. image:: ../images/map_suwon/desc2.png
-    :height: 100
-    :width: 250
-    :scale: 100%
     :alt: layer_1 마커
 
 - 메뉴바에서 **텍스트상자** 클릭
 
 .. image:: ../images/map_suwon/desc3.png
-    :height: 20
-    :width: 200
-    :scale: 100%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
 .. image:: ../images/map_suwon/parking_att.png
-    :height: 150
-    :width: 300
-    :scale: 100%
     :alt: 주차장범례 속성
 
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
 
 .. image:: ../images/map_suwon/polygon4_att.png
-    :height: 150
-    :width: 300
-    :scale: 100%
     :alt: 주차장범례 속성
 
 - 다른 레이어의 범례도 같은 방법으로 생성한다.
@@ -295,9 +260,6 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 최종 보기
 
 .. image:: ../images/map_suwon/sw_last.png
-    :height: 450
-    :width: 800
-    :scale: 100%
     :alt: 최종
 
 |
