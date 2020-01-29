@@ -261,7 +261,5 @@ IRIS Local 테이블로부터 데이터 Select
 R rmd  실행 결과 html
 -----------------------------------
 
-`HTML for this Example <http:https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`_
+`HTML for this Example <https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`_
 
-
-retrieve_data_from_iris_to_r/RJDBC_v0.2.html
