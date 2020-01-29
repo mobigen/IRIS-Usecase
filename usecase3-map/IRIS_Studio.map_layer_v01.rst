@@ -161,6 +161,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 마커의 종류 및 갯수, 마커의 크기 지정
 
 .. image:: ../images/map_suwon/sw_layer_mk_size.png
+    :scale: 60%
     :alt: layer_1 마커 사이즈
 
 |
