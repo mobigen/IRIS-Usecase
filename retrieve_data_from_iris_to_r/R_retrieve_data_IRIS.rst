@@ -40,7 +40,7 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 - RJDBC 패키지를 이용한다.  
     - id / passwd = myiris / myiris 
     - iris DB 접속 정보 : 192.168.100.180:5050
-    - JDBC 
+    - JDBC path 지정
 
 .. code::
 
@@ -60,10 +60,9 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 
 .. code::
  
-[1] 0
-[1] "/usr/lib64/R/library/rJava/java"                                   
-[2] "/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar"
-[3] "/usr/lib64/R/library/RJDBC/java/RJDBC.jar"
+  [1] "/usr/lib64/R/library/rJava/java"                                   
+  [2] "/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar"
+  [3] "/usr/lib64/R/library/RJDBC/java/RJDBC.jar"
 
 |
 
@@ -132,7 +131,7 @@ IRIS Global 테이블 생성하기
 |
 
 -------------------------------------------------------------------
-IRIS Global 테이블에 데이터 Insert / select
+IRIS Global 테이블에 Insert / select
 -------------------------------------------------------------------
 
 - Insert into Global table
