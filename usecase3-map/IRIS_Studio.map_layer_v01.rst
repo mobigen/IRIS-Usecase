@@ -170,6 +170,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 임계치 및 객체별 자동은 데이터 및 case 에 따라 지정할 수 있으므로 사용자 메뉴얼을 참고할 것
 
 .. image:: ../images/map_suwon/sw_layer_mk_color.png
+    :scale: 60%
     :alt: layer_1 마커 색상
 
 |
@@ -182,6 +183,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 .. image:: ../images/map_suwon/sw_layer_mk_data.png
+    :scale: 60%
     :alt: layer_1 데이터
 
 |
@@ -216,6 +218,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 
 
 .. image:: ../images/map_suwon/sw_layer_mk_tt.png
+    :scale: 60%
     :alt: layer_1 마커 툴팁
 
 |
@@ -234,26 +237,31 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 - 각 레이어의 마커 색상 정보를 보기 쉽게 하기 위해 **범례** 를 따로 만들기로 한다.
 
 .. image:: ../images/map_suwon/desc1.png
+    :scale: 60%
     :alt: 범례
 
 - 주차장 레이어의 마커 색상 정보를 복사한다.
 
 .. image:: ../images/map_suwon/desc2.png
+    :scale: 60%
     :alt: layer_1 마커
 
 - 메뉴바에서 **텍스트상자** 클릭
 
 .. image:: ../images/map_suwon/desc3.png
+    :scale: 60%
     :alt: 텍스트상자
 
 - 텍스트 상자를 지도 위에 적당한 크기로 그리고, 속성탭에서 기본값으로 주차장 입력한다.
 
 .. image:: ../images/map_suwon/parking_att.png
+    :scale: 60%
     :alt: 주차장범례 속성
 
 - 메뉴바에서 사각형 을 선택하고, 주차장 텍스트 박스 아래에 두고 복사한 주차장 마커의 색상 정보를 설정한다.
 
 .. image:: ../images/map_suwon/polygon4_att.png
+    :scale: 60%
     :alt: 주차장범례 속성
 
 - 다른 레이어의 범례도 같은 방법으로 생성한다.
