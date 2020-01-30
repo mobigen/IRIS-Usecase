@@ -55,7 +55,6 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 |
 
 .. image:: ../images/anomalies/anomalies_data02.png
-    :scale: 60%
     :alt: 검색 데이터 -2
 
 |
