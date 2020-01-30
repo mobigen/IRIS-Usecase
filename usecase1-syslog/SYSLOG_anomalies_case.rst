@@ -49,12 +49,12 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
     - 각 컬럼 별 상위 10개의 분포를 확인할 수 있다.
     - 데이터 조회 시간 : 2020/01/30 08:00:00 ~ 2020/01/30 13:59:59
 
-.. image:: ../images/map_anomalies/anomalies_data01.png
+.. image:: ../images/anomalies/anomalies_data01.png
     :alt: 검색 데이터 -1
 
 |
 
-.. image:: ../images/map_anomalies/anomalies_data02.png
+.. image:: ../images/anomalies/anomalies_data02.png
     :alt: 검색 데이터 -2
 
 |
