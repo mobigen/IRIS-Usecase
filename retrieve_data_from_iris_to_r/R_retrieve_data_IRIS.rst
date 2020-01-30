@@ -4,22 +4,12 @@
 R-studio : Retrieve data from IRIS DB
 ================================================================================
     
-|
-
------------------
-요약 
------------------
-
-R-Studio 에서 RJDBC 를 이용하여 IRIS DB 에 테이블을 create 하고, select 하는 예제이다.
-
-global 테이블과 local 테이블을 각각 create / select 해 본다.
-
-|
-|
 
 -----------------
 목차
 -----------------
+
+- 설명 
 
 - RJDBC 를 이용하여 IRIS DB 접속하기
 
@@ -32,6 +22,21 @@ global 테이블과 local 테이블을 각각 create / select 해 본다.
 - IRIS Local 테이블에 데이터를 insert / select 하기
 
 |
+-----------------
+설명 
+-----------------
+
+R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고, 
+
+데이터를 insert, select 하는 예제이다.
+
+IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고
+
+데이터를 insert / select 해 본다.
+
+|
+|
+
 
 -----------------------------------------------------
 RJDBC 를 이용하여 IRIS DB 접속하기
@@ -51,14 +56,15 @@ RJDBC 를 이용하여 IRIS DB 접속하기
   .jaddClassPath("/usr/share/R/library/log4j-1.2.17.jar")
   .jaddClassPath("/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar")
 
-  print(.jclassPath())
  
 
 |
 
-- java class path 확인
+- java class path 확인 
 
 .. code::
+
+  print(.jclassPath())
  
   [1] "/usr/lib64/R/library/rJava/java"                                   
   [2] "/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar"
@@ -66,6 +72,9 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 
 |
 
+- IRIS DB 접속 connector object( conn )  생성하기
+    - myiris 계정 예제
+    - jdbc driver 버전  : mobigen-iris-jdbc-2.1.0.1.jar
 
 .. code::
 
@@ -76,13 +85,13 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 
 
 |
-|
+
 
 ----------------------------------------------
 IRIS Global 테이블 생성하기
 ----------------------------------------------
 
-- 붓꽃(iris) 데이터를 Global 테이블로 생성한다.
+- 붓꽃(iris) 데이터를 기준으로 한 Global 테이블을 생성한다.
 
 - Global 테이블 생성 SQL 
 
@@ -105,7 +114,7 @@ IRIS Global 테이블 생성하기
 |
 
 - dbSendUpdate 로 sql 문을 실행한다.
-    - return 되는 값은 없다.
+    - return 되는 값은 없으니 주의할 것!!
 
 .. code::
 
@@ -119,7 +128,8 @@ IRIS Global 테이블 생성하기
 
 |
 
-- 테이블이 생성되었는 지 확인하기
+- 테이블이 생성되었는 지 확인하기 
+    - IRIS DB 명령어인 "table list" 사용
 
 .. code::
 
@@ -128,13 +138,14 @@ IRIS Global 테이블 생성하기
 
 
 |
-|
 
 -------------------------------------------------------------------
 IRIS Global 테이블에 Insert / select
 -------------------------------------------------------------------
 
 - Insert into Global table
+    - INSERT INTO 테이블명 VALUES (,,,,) 예제
+    - dbSendUpdate
 
 .. code::
 
@@ -142,8 +153,10 @@ IRIS Global 테이블에 Insert / select
 
   dbSendUpdate(conn, ins_sql)
 
+|
 
 - Select from Global table
+    - dbGetQuery
 
 .. code::
 
@@ -153,13 +166,13 @@ IRIS Global 테이블에 Insert / select
 
 
 |
-
+|
 
 --------------------------------------------
 IRIS Local 테이블 생성하기
 --------------------------------------------
 
-- SYSLOG 데이터를 Local 테이블로 생성한다.
+- SYSLOG 데이터를 기준으로 Local 테이블을 생성한다.
     - partiton range = 60min ( 60분으로 파티션 범위를 정함)
     - partition 구분 컬럼 = DATETIME ( partition 구분기준 컬럼이름. 반드시 해당 시간필드를  YYYYMMDDHHMMSS 14자리 text 형식으로 변환해 놓아야 한다)
     - partition키 = HOST ( partition key)
@@ -185,13 +198,18 @@ IRIS Local 테이블 생성하기
 
   dbSendUpdate(conn, cr_table_sql)
 
-
+|
 
 --------------------------------------------------------------------
 IRIS Local 테이블로부터 데이터 Select  
 --------------------------------------------------------------------
 
-- 이미 입력되어 있는 SYSLOG 테이블로부터 데이터를 select 해서 가져온 데이터를 새로 만든 테이블에 Insert.
+- IRIS DB 에 있는 Local 테이블로부터 데이터를 select 
+- 가져온 데이터를 R dataframe 에 저장한 후 1000 개 단위로 새로 만든 테이블에 Insert 하기
+    - dbSendQuery 로 데이터 select 
+    - dbFetch 를 반복 해서 데이터를 가져 와서 dataframe 에 저장
+    - dbClearResult 
+    
 
 .. code::
 
@@ -232,8 +250,11 @@ IRIS Local 테이블로부터 데이터 Select
 
 |
 
+
 - R DataFrame 을 IRIS DB 에 Insert 하기
     - my_dataframe( 총 89887 건 ) :  1000 건을 한번에 insert 하는 예제
+    - batch insert SQL 문을 만드는 function 생성 : insert_batch_sql_f
+    - dbGetQuery  로 insert한 데이터를 확인한다.
 
 .. code::
 
@@ -256,6 +277,7 @@ IRIS Local 테이블로부터 데이터 Select
   my_count <- dbGetQuery(conn,"select count(*) from IRIS_LOCAL_TEST_2")
   print(my_count)
 
+|
 
 -----------------------------------
 R rmd  실행 결과 html
