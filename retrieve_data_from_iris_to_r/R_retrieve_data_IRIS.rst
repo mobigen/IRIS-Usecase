@@ -284,4 +284,4 @@ R rmd  실행 결과 (PDF)
 -----------------------------------
 
 
-`Rmd 실행 결과 PDF <retrieve_data_from_iris_to_r/RJDBC_v0.2.utf8.md.pdf>`
+`Rmd 실행 결과 PDF <https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.utf8.md.pdf>`
