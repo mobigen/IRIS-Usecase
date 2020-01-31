@@ -284,4 +284,5 @@ R rmd  실행 결과 html
 -----------------------------------
 
 
-`Rmd 실행 결과 html <retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`_
+`Rmd 실행 결과 html <https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`_
+
