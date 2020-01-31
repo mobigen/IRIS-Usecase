@@ -283,4 +283,5 @@ IRIS Local 테이블로부터 데이터 Select
 R rmd  실행 결과 html
 -----------------------------------
 
-See :download:`Rmd 실행결과 html <retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`
+
+:ref:`Rmd 실행 결과 html <retrieve_data_from_iris_to_r/RJDBC_v0.2.html>`_
