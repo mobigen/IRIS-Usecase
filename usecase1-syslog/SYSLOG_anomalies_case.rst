@@ -69,11 +69,8 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 |
 
 - 데이터 필터링 
-    
     - SYSLOG 데이터 중에서 LEVEL 이 Info 인 경우는 검색에서 제외할 수 있습니다.
-    
     - 검색 명령어 창에서 바로 != 로 제외하거나
-    
     - 데이터를 클릭한 후 검색에서 **제외** 클릭으로 필터링이 가능합니다.
     
 .. image:: ../images/anomalies/anomalies_data03.png
@@ -82,7 +79,6 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 |
 
 - 특정 시간 범위로 재검색 할 수 있습니다.
-    
     - 이벤트 건수 시계열 그래프를 보고 범위를 선택하여 재검색할 수 있습니다.
 
 .. image:: ../images/anomalies/anomalies_data04.png
@@ -96,7 +92,6 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 ------------------------------
 
 - SYSLOG 는 로그데이터 이므로 anomalies(이상탐지)를 위해서 10분 단위의 집계 데이터를 생성해야 합니다.
-    
     - SQL 로 표현하면 => select A, B, COUNT(*) from .... GROUP BY A, B  
 
 - 해당 시간에 HOST 별로  SYSLOG COUNT 가 이상 증가 또는 감소한 것이 있는지 파악하고자 합니다.
@@ -117,19 +112,12 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 |
 
 -  HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 합니다.
-    
     - 이 때 사용되는 명령어는 fill_zero 입니다.
-    
     - 사용예) fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
-        
         - freq : 집계 시간 단위. 초.  freq=600  은 600초. 
-        
         - stime : 집계시작시간
-        
         - etime : 집계종료시간
-        
         - time_column : 시간 컬럼
-        
         - group_key : group 컬럼. 시간컬럼은
 
 
@@ -190,9 +178,7 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 - anomalies 결과 데이터로 직접 챠트를 그려서 시각적으로 해석을 하기 위한 방법입니다.
 
 - 통계탭에 나온 결과를 로컬 PC에 저장한 후에
-    
     - IRIS 의 **대화형분석** 메뉴에서 Jupyter 노트북이나 R-studio 로 챠트를 그릴 수 있습니다.
-    
     - 이 방법은 python 이나 R 로 챠트를 그리는 데 능숙하고, 데이터를 재처리할 필요가 있는 경우입니다.
 
 - 통계텝에 나온 결과를 HDFS로 저장한 후에
