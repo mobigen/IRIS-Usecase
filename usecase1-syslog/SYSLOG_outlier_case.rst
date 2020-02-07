@@ -30,19 +30,22 @@ outlier - 그룹내 이상치 탐지
 설명
 -----------------
 
-- 3개 이상의 그룹(여기서는 HOST별 데이터) 을 대상으로 outlier 에 해당하는 그룹을 찾아 냅니다.
+3개 이상의 그룹(여기서는 HOST별 데이터) 을 대상으로 outlier 에 해당하는 그룹을 찾아 냅니다.
 
-- outlier 에 해당하는 그룹 선정 방식은 alg 옵션에 따라
-    - alg=dbscan : default. 여러 개의 그룹 데이터를 clustering 하여 어느 cluster 에도 포함이 되지 않는 그룹을 찾아 냅니다.      
-    - alg=mad : 그룹 내의 데이터에서 madian(중간값)을 기반으로 anomal데이터로 판정된 비율이 일정비율 이상인 그룹을 찾아 냅니다.
+outlier 에 해당하는 그룹 선정 방식은 alg 옵션에 따라
+    
+    alg=dbscan : default. 여러 개의 그룹 데이터를 clustering 하여 어느 cluster 에도 포함이 되지 않는 그룹을 찾아 냅니다.      
+    
+    alg=mad : 그룹 내의 데이터에서 madian(중간값)을 기반으로 anomal데이터로 판정된 비율이 일정비율 이상인 그룹을 찾아 냅니다.
 
 
-- SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 단위 시간동안의 집계 count 를 대상으로 이상탐지를 판단합니다.
+SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 단위 시간동안의 집계 count 를 대상으로 이상탐지를 판단합니다.
 
-- 기본적인 과정은 
-    - 10분 단위 집계 데이터 생성합니다.
-    - 빠진 단위 시간(10분)은 0 으로 값을 채웁니다. 
-    - outlier 명령어를 실행합니다.
+기본적인 과정은 
+
+  10분 단위 집계 데이터 생성합니다.
+  빠진 단위 시간(10분)은 0 으로 값을 채웁니다. 
+  outlier 명령어를 실행합니다.
 
 
 ---------------
@@ -58,32 +61,37 @@ outlier - 그룹내 이상치 탐지
 데이터 전처리
 ------------------------------
 
-- SYSLOG 는 로그데이터 이므로 outlier 탐지를 위해서 각 그룹별로 동일한 단위 시간(10분, 1시간 등) 의 집계 데이터를 생성해야 합니다.
-    - SQL 로 표현하면 => select A, B, COUNT(*) from .... GROUP BY A, B  
+SYSLOG 는 로그데이터 이므로 outlier 탐지를 위해서 각 그룹별로 동일한 단위 시간(10분, 1시간 등) 의 집계 데이터를 생성해야 합니다.
 
-- 해당 시간에 HOST 별로  SYSLOG COUNT 가 이상 증가 또는 감소한 것이 있는지 파악하고자 합니다.
+SQL 로 표현하면 
 
-- 먼저 검색명령어 창에서 10분 집계 데이터를 HOST 별로 생성하는 명령어를 입력합니다.
+    select A, B, COUNT(*) from .... GROUP BY A, B  
+
+해당 시간에 HOST 별로  SYSLOG COUNT 가 이상 증가 또는 감소한 것이 있는지 파악하고자 합니다.
+
+먼저 검색명령어 창에서 10분 집계 데이터를 HOST 별로 생성하는 명령어를 입력합니다.
 
 .. code::
 
   * LEVEL!='info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  | sort +dategroup
 
 
-- stats 명령어 구문이 검색명령어에 포함되면 결과는 통계탭에 출력됩니다.
+stats 명령어 구문이 검색명령어에 포함되면 결과는 통계탭에 출력됩니다.
 
 .. image:: ../images/anomalies/outlier_data02.png
     :alt: 검색 데이터 -2
 
 
--  HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 합니다.
-    - 이 때 사용되는 명령어는 fill_zero 입니다.
-    - 사용예) fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
-        - freq : 집계 시간 단위. 초.  freq=600  은 600초. 
-        - stime : 집계시작시간
-        - etime : 집계종료시간
-        - time_column : 시간 컬럼
-        - group_key : group 컬럼. 시간컬럼은
+HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 합니다.
+
+이 때 사용되는 명령어는 fill_zero 입니다.
+
+사용예) fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
+      freq : 집계 시간 단위. 초.  freq=600  은 600초. 
+      stime : 집계시작시간
+      etime : 집계종료시간
+      time_column : 시간 컬럼
+      group_key : group 컬럼. 시간컬럼은
 
 .. code::
 
@@ -108,12 +116,15 @@ outlier - 그룹내 이상치 탐지
 dbscan 알고리즘(default)
 '''''''''''''''''''''''''''''''
 
-- outlier 실행 결과 
+outlier 실행 결과 
 
 .. image:: ../images/anomalies/anomalies_data06.png
     :alt: 검색 데이터 -6
 
-* LEVEL!='info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
+
+.. code::
+
+ * LEVEL!='info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
  | sort +dategroup 
  | sql "select dategroup as NEW_DATE,  HOST, CNT from angora"  
  | fill_zero freq=600 stime=20191210090000  etime=20191210115959  time_column=NEW_DATE  group_key=HOST value=CNT 
