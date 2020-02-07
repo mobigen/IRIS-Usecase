@@ -44,7 +44,9 @@ SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 �
 기본적인 과정은 
 
   10분 단위 집계 데이터 생성합니다.
+
   빠진 단위 시간(10분)은 0 으로 값을 채웁니다. 
+
   outlier 명령어를 실행합니다.
 
 
@@ -86,13 +88,24 @@ HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 �
 
 이 때 사용되는 명령어는 fill_zero 입니다.
 
-사용예) fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
+.. code::
+
+  fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
+      
       freq : 집계 시간 단위. 초.  freq=600  은 600초. 
+      
       stime : 집계시작시간
+      
       etime : 집계종료시간
+      
       time_column : 시간 컬럼
+      
       group_key : group 컬럼. 시간컬럼은
 
+
+
+ 검색명령어 사용 예
+ 
 .. code::
 
  * LEVEL!='info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
