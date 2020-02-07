@@ -33,20 +33,15 @@ outlier - 그룹내 이상치 탐지
 - 3개 이상의 그룹(여기서는 HOST별 데이터) 을 대상으로 outlier 에 해당하는 그룹을 찾아 냅니다.
 
 - outlier 에 해당하는 그룹 선정 방식은 alg 옵션에 따라
-
-    - alg=dbscan : default. 여러 개의 그룹 데이터를 clustering 하여 어느 cluster 에도 포함이 되지 않는 그룹을 찾아 냅니다.
-        
+    - alg=dbscan : default. 여러 개의 그룹 데이터를 clustering 하여 어느 cluster 에도 포함이 되지 않는 그룹을 찾아 냅니다.      
     - alg=mad : 그룹 내의 데이터에서 madian(중간값)을 기반으로 anomal데이터로 판정된 비율이 일정비율 이상인 그룹을 찾아 냅니다.
 
 
 - SYSLOG는 수치 측정값이 없는 로그 데이터이므로 1분, 10분 등 단위 시간동안의 집계 count 를 대상으로 이상탐지를 판단합니다.
 
 - 기본적인 과정은 
-
     - 10분 단위 집계 데이터 생성합니다.
-  
-    - 빠진 단위 시간(10분)은 0 으로 값을 채웁니다.
-  
+    - 빠진 단위 시간(10분)은 0 으로 값을 채웁니다. 
     - outlier 명령어를 실행합니다.
 
 
@@ -81,7 +76,6 @@ outlier - 그룹내 이상치 탐지
     :alt: 검색 데이터 -2
 
 
-
 -  HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 합니다.
     - 이 때 사용되는 명령어는 fill_zero 입니다.
     - 사용예) fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
@@ -90,7 +84,6 @@ outlier - 그룹내 이상치 탐지
         - etime : 집계종료시간
         - time_column : 시간 컬럼
         - group_key : group 컬럼. 시간컬럼은
-
 
 .. code::
 
