@@ -6,8 +6,8 @@ outlier - 그룹내 이상치 탐지
     
 
 - 여러 그룹을 대상으로 outlier 에 해당하는 그룹을 찾는 명령어 입니다.
-- 비슷한 그룹으로 clustering 을 한 결과 데이터의 패턴이 달라서 묶이지 않는 그룹을 찾습니다. ( dbscan 알고리즘)
-- 알고리즘을 mad 로 지정하여 실행하면 그룹 내의 데이터중에서 일정 비율 이상으로 많은 anomal 한 데이터를 갖고 있는 그룹을 탐지합니다.
+- dbscan 알고리즘은 비슷한 그룹으로 clustering 을 한 결과 데이터의 패턴이 달라서 묶이지 않는 그룹을 찾습니다.
+- mad 알고리즘은 그룹 내의 데이터중에서 anomal 한 데이터를 일정 비율 보다 먾이 가지고 있는 그룹을 탐지합니다.
 
 
 
@@ -125,11 +125,14 @@ HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 �
 dbscan 알고리즘(default)
 '''''''''''''''''''''''''''''''
 
-outlier 실행 결과 
+검색 메뉴에서 outlier 실행 하기 
 
 .. image:: ../images/anomalies/anomalies_data06.png
     :alt: 검색 데이터 -6
 
+
+
+명령어 구문 
 
 .. code::
 
@@ -140,8 +143,11 @@ outlier 실행 결과
  | outlier CNT by=HOST
 
 
+실행 결과
+
 .. image:: ../images/anomalies/outlier_data04.png
     :alt: 검색 데이터 -4
+
 
 
 
@@ -149,9 +155,9 @@ outlier 실행 결과
 결과 해석 
 ''''''''''''''''''''''''''''
 
-dbscan 알고리즘은 모든 데이터를 밀도기반 알고리즘으로 클러스터링합니다.
+dbscan 알고리즘은 밀도기반 알고리즘으로 데이터를 클러스터링합니다.
 
-클러스터링 결과 클러스터(label 컬럼)별로 다양한 HOST 데이터가 존재하는 것이 일반적인데
+클러스터링 결과 클러스터(결과에서 label 컬럼)별로 다양한 HOST 데이터가 존재하는 것이 일반적인데
 
 오직 1개의 HOST 데이터만 있는 클러스터가 있다면 해당 HOST 데이터가 outlier 라고 판정하는 알고리즘입니다.
 
@@ -163,9 +169,16 @@ dbscan 알고리즘은 모든 데이터를 밀도기반 알고리즘으로 클�
 
 HOST 중에서 tsdnsvr1 이 outlier = true 인 데이터를 가지고 있으며, 
 
-HOST 별로 시계열 라인 챠트를 그려보면 
+label 0 에 있는 1개의 HOST도 tsdnsvr1 이고, 
 
-tsdnsvr1 이 다른 HOST 보다 큰 CNT 값을 가지고 있다는 걸 알 수 있습니다.
+label -1 에 있는 1개의 HOST 도 tsdnsvr1 임을 알 수 있습니다.
+
+
+그럼 tsdnsvr1이 다른 HOST 와 다르게 어떤 트랜드를 가지고 있는지 파악하기 위해
+
+HOST 별로 시계열 라인 챠트를 그려봅니다.
+
+챠트를 보면 특정 시간에 tsdnsvr1 이 다른 HOST 보다 큰 CNT 값을 가지고 있다는 걸 알 수 있습니다.
 
 .. image:: ../images/anomalies/anomalies_data13.png
     :alt: 검색 데이터 -13 
