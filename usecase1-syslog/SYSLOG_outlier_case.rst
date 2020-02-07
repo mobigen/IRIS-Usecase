@@ -93,19 +93,15 @@ HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 �
   fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT 
       
       freq : 집계 시간 단위. 초.  freq=600  은 600초. 
-      
       stime : 집계시작시간
-      
       etime : 집계종료시간
-      
       time_column : 시간 컬럼
-      
       group_key : group 컬럼. 시간컬럼은
 
 
 
- 검색명령어 사용 예
- 
+검색명령어 사용 예
+
 .. code::
 
  * LEVEL!='info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
