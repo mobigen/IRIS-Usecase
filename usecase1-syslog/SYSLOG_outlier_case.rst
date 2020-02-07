@@ -32,8 +32,8 @@ outlier - 그룹내 이상치 탐지
 
 outlier 에 해당하는 그룹 선정 방식은 알고리즘 옵션에 따라 두가지로 나뉩니다.
 
-.. list-table::
-    :heaer-rows: 1
+.. list-table:: outlier 옵션
+    :header-rows: 1
 
     * - 알고리즘
       - default  
