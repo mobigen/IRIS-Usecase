@@ -169,9 +169,7 @@ dbscan 알고리즘은 밀도기반 알고리즘으로 데이터를 클러스터
 
 HOST 중에서 tsdnsvr1 이 outlier = true 인 데이터를 가지고 있으며, 
 
-label 0 에 있는 1개의 HOST도 tsdnsvr1 이고, 
-
-label -1 에 있는 1개의 HOST 도 tsdnsvr1 임을 알 수 있습니다.
+label = -1 에 있는 1개의 HOST 가  tsdnsvr1 임을 알 수 있습니다.
 
 
 그럼 tsdnsvr1이 다른 HOST 와 다르게 어떤 트랜드를 가지고 있는지 파악하기 위해
