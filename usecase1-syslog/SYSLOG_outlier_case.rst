@@ -167,8 +167,8 @@ HOST 별로 시계열 라인 챠트를 그려보면
 
 tsdnsvr1 이 다른 HOST 보다 큰 CNT 값을 가지고 있다는 걸 알 수 있습니다.
 
-.. image:: ../images/anomalies/anomalies_data14.png
-    :alt: 검색 데이터 -14 
+.. image:: ../images/anomalies/anomalies_data13.png
+    :alt: 검색 데이터 -13 
 
 
 
