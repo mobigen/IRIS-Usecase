@@ -171,10 +171,15 @@ HOST 중에서 tsdnsvr1 이 outlier = true 인 데이터를 가지고 있으며,
 
 label = -1 에 있는 1개의 HOST 가  tsdnsvr1 임을 알 수 있습니다.
 
+.. image:: ../images/anomalies/outlier_data06.png
+    :alt: 결과 해석 데이터 bar
 
-그럼 tsdnsvr1이 다른 HOST 와 다르게 어떤 트랜드를 가지고 있는지 파악하기 위해
 
-HOST 별로 시계열 라인 챠트를 그려봅니다.
+
+
+그럼 tsdnsvr1이 다른 HOST 와 비교하여, 어떤 트랜드를 가지고 있는지 파악하기 위해
+
+HOST 별 시계열 라인 챠트를 그려봅니다.
 
 챠트를 보면 특정 시간에 tsdnsvr1 이 다른 HOST 보다 큰 CNT 값을 가지고 있다는 걸 알 수 있습니다.
 
