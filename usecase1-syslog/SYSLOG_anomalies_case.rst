@@ -124,7 +124,7 @@ HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 �
         - stime : 집계시작시간
         - etime : 집계종료시간
         - time_column : 시간 컬럼
-        - group_key : group 컬럼. 시간컬럼은
+        - group_key : group 컬럼
 
 
 검색 명령어 사용 예

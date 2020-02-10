@@ -42,7 +42,7 @@ outlier 에 해당하는 그룹 선정 방식은 알고리즘 옵션에 따라 �
       - default
       - 데이터를 clustering 하여 어느 cluster 에도 포함이 되지 않는 그룹을 찾아내는 알고리즘
     * - mad
-      - X
+      - 
       - madian(중간값)을 기반으로 anomal 데이터로 판정된 비율이 임계치 이상인 그룹을 찾아내는 알고리즘 
     
 
@@ -105,7 +105,7 @@ HOST 별로 SYSLOG 가 없는 시간(10분단위)은 값을 0 으로 채워야 �
       stime : 집계시작시간
       etime : 집계종료시간
       time_column : 시간 컬럼
-      group_key : group 컬럼. 시간컬럼은
+      group_key : group 컬럼
 
 
 
