@@ -85,7 +85,8 @@ seasonal 알고리즘
 
 계절성과 시간적 변화에 따라 예측을 수행 합니다. 
 
-내부적으로 ARIMA 알고리즘이 적용되며, AIC 값을 최소화 하는 order 를 구해서 모델링합니다.
+내부적으로 ARIMA 알고리즘이 적용되며, AIC(Akaike’s Information Criterion) 값을 최소화 하는 order 를 구해서 모델링합니다.
+
 
 .. list-table::
    :header-rows: 1
@@ -100,8 +101,12 @@ seasonal 알고리즘
      - 예측하고자 하는 target 필드 입니다.
      - 필수
    * - alg
-     - 시계열 데이터 예측에 사용되는 알고리즘. default 로  linear 알고리즘.
+     - seasonal 은 alg=seasonal로 명시합니다.
      - 옵션
+   * - seasonality
+     - default 는 hourly입니다. 주기의 단위가 시간인 경우 입니다.
+
+       만약 일단위의 주기성을 가진 경우는 daily , 주단위는 weekly, 월단위는 monthly입니다.
    * - f_coeff
      - 예측값이 계산되어 결과로 나오는 기간을 구하는 데 사용되는 계수.  
      
@@ -194,10 +199,6 @@ linear ( 선형회귀 알고리즘)
 ''''''''''''''''''''''''''''''''''
 
 검색 메뉴에서 forecasts 실행 하기 
-
-.. image:: ../images/anomalies/forecasts_data04.png
-    :alt: 검색 데이터 -4
-
 
 
 명령어 구문 
