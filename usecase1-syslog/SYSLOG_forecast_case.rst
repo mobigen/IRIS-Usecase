@@ -47,7 +47,7 @@ linear 알고리즘
 
 linear regression 으로 예측을 수행 합니다.
 
-.. list-table::
+.. list-table:: forecasts linear 옵션
    :header-rows: 1
 
    * - 이름
@@ -88,7 +88,7 @@ seasonal 알고리즘
 내부적으로 ARIMA 알고리즘이 적용되며, AIC(Akaike’s Information Criterion) 값을 최소화 하는 order 를 구해서 모델링합니다.
 
 
-.. list-table::
+.. list-table:: forecasts seasonal 옵션
    :header-rows: 1
 
    * - 이름
@@ -248,7 +248,7 @@ seasonal 알고리즘
 ''''''''''''''''''''
 
 
-... code::
+.. code::
 
  * HOST='platform2'  |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") 
  | sql "select dategroup as NEW_DATE,  CNT from angora"  
