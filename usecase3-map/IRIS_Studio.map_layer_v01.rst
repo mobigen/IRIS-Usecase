@@ -128,6 +128,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
      - 실행 버튼을 누릅니다.
 
 .. image:: ../images/map_suwon/sw_map02.png
+    :scale: 60%
     :alt: layer_1 data
 
 
@@ -139,6 +140,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 시각화 유형은 위/경도 좌표를 마커(점) 으로 표시합니다.
     
 .. image:: ../images/map_suwon/sw_map04.png
+    :scale: 60%
     :alt: layer_1 마커
 
 
@@ -146,6 +148,7 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
     - 마커의 종류 및 갯수, 마커의 크기 지정할 수 있습니다.
 
 .. image:: ../images/map_suwon/sw_map05.png
+    :scale: 60%
     :alt: layer_1 마커 사이즈
 
 
