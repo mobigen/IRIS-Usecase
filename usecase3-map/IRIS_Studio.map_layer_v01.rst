@@ -271,6 +271,5 @@ IRIS Studio : map 에서 여러개의 레이어로 아이템 표시하기
 .. image:: ../images/map_suwon/sw_map01.png
     :alt: 최종
 
-|
 
 
