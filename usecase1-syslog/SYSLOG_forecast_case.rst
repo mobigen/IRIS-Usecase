@@ -104,9 +104,11 @@ seasonal 알고리즘
      - seasonal 은 alg=seasonal로 명시합니다.
      - 옵션
    * - seasonality
-     - default 는 hourly입니다. 주기의 단위가 시간인 경우 입니다.
+     - default 는 hourly입니다. 09:15, 10:15 처럼 같은 분(minute)에 주기성이 있는 경우입니다.
 
-       만약 일단위의 주기성을 가진 경우는 daily , 주단위는 weekly, 월단위는 monthly입니다.
+       만약 daily 는 매일 5:00 동일한 시각에 비슷한 패턴이 있는 경우이고 
+       
+       weekly 는 이번주 화요일은 지난주 화요일과 동일한 패턴일 때입니다.
      - 옵션
    * - f_coeff
      - 예측값이 계산되어 결과로 나오는 기간을 구하는 데 사용되는 계수.  
@@ -213,11 +215,13 @@ linear ( 선형회귀 알고리즘)
  | forecasts NEW_DATE CNT alg=linear
 
 
-실행 결과
+실행 결과는 stats 구문의 사용으로 통계탭에 출력됩니다.
 
 .. image:: ../images/anomalies/forecasts_data04.png
     :alt: 검색 데이터 -4
 
+
+단순한 라인 챠트를 시각화 탭에서 확인 할 수 있습니다.
 
 .. image:: ../images/anomalies/forecasts_data05.png
     :alt: 검색 데이터 -5
@@ -237,7 +241,7 @@ linear 알고리즘은 선형회귀법으로 예측값을 계산합니다.
 해당 데이터처럼 주기가 있는 경우에는 linear 가 아닌 seasonal 옵션으로 예측을 진행하는 것이 더 타당해 보입니다.
 
 
-.. image:: ../images/anomalies/forecasts_data05.png
+.. image:: ../images/anomalies/forecasts_data06.png
     :alt: 검색 데이터 -5
 
 
@@ -255,4 +259,7 @@ seasonal 알고리즘
  | sql "select dategroup as NEW_DATE,  CNT from angora"  
  | fill_zero freq=600 stime=20191210090000  etime=20191210115959  time_column=NEW_DATE  value=CNT 
  | sort +NEW_DATE
- | forecasts NEW_DATE CNT alg=seasonal 
+ | forecasts NEW_DATE CNT alg=seasonal seasonality=daily
+
+.. image:: ../images/anomalies/forecasts_data07.png
+    :alt: 검색 데이터 -7
