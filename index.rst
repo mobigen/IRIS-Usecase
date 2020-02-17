@@ -1,4 +1,4 @@
-IRIS Usecase
+Usecase
 ====================
 
 IRIS Usecase
