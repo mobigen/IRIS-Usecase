@@ -23,13 +23,9 @@ R 에서 아이리스에 저장된 데이터 가져오기
 설명 
 -----------------
 
-R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고, 
+R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고, 데이터를 insert, select 하는 예제입니다.
 
-데이터를 insert, select 하는 예제입니다.
-
-IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고
-
-데이터를 insert / select 해 봅니다.
+IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고 데이터를 insert / select 해 봅니다.
 
 |
 |
