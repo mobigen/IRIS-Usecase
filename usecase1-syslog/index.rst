@@ -1,7 +1,7 @@
 SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제
 =========================================================================
 
-ML(Machine Learning) 기법을 활용한 빅데이터 처리 명령어의 활용법입니다. 
+M/L(Machine Learinig)알고리즘 기반의 이상 탐지(anomalies, outlier)와 예측(forecasts) 명령어를 이용한 데이터 분석 예제입니다. 
 
 .. toctree::
     :hidden:
