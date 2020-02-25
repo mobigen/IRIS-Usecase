@@ -50,10 +50,10 @@ IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트
     :alt: 데이터 예시 -3
 
 
-.. image:: ../images/map_suwon/sw_dong_data_4.png
+- 수원시 동단위 외국인 국적별 분포 데이터
     - IRIS 의 Local Table 로 저장합니다.
+.. image:: ../images/map_suwon/sw_dong_data_4.png
     :alt: 데이터 예시 -4
-
 
 
 -----------------------
@@ -149,6 +149,7 @@ IRIS Studio 따라 하기 : 지도
 - 검색어 예시
 
 .. code::
+
     SELECT 
 	  LOCAL_A.STANDARD_DATE_NAME, LOCAL_A.BASIS_DATE,  LOCAL_A.GU, LOCAL_A.DONG, LOCAL_A.HOUSEHOLD_COUNT, LOCAL_A.MALE_POPULATION_COUNT, LOCAL_A.FEMALE_POPULATION_COUNT, LOCAL_A.HOUSEHOLD_POLITICAL_PARTY_POPULATION_RATE,  
       ( LOCAL_A.MALE_POPULATION_COUNT + LOCAL_A.FEMALE_POPULATION_COUNT) AS POP_COUNT ,
