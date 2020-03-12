@@ -141,6 +141,8 @@ Studio 보고서 따라하기
 콤보 박스 생성
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+- 참조 매뉴얼 `콤보박스를 활용하여 데이터 필터링하기 <http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html>`__
+
 - 조회할 연도를 선택하는 콤보박스 만드는 과정입니다.(1번)
     - 디폴트로 2016년을 지정하여 콤보박스를 클릭하지 않고도 자동실행되어 2016년 조회결과가 출력되게 합니다.
 
@@ -152,7 +154,8 @@ Studio 보고서 따라하기
 챠트-테이블 생성
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  전체 데이터중에서 콤보박스에서 선택된 연도의 데이터만 **챠트**의 테이블로 출력하는 과정입니다.(2)
+- 참조 매뉴얼 `테이블 <http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/table/table.html>`__
+- 전체 데이터중에서 콤보박스에서 선택된 연도의 데이터만 **챠트**의 테이블로 출력하는 과정입니다.(2)
     - 데이터 모델 DEMO_BATTING_NEW 
     - 검색어 구문 해석  : `검색어에 대한 설명 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/index.html>`__ 참조
 
