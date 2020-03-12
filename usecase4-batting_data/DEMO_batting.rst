@@ -1,0 +1,335 @@
+
+====================================================================================
+IRIS Studio - DEMO_Batting지표
+====================================================================================
+
+`Lahman의 홈페이지 <http://www.seanlahman.com/baseball-archive/statistics/>`__ 에 있는 미국 야구 데이터에서 
+타격에 관한 데이터인 batting.csv 로  IRIS Studio 에서 여러 지표와 챠트를 만들어 봅니다.
+
+.. image:: ../images/demo/demo_batting_01.png
+    :alt: 데이터 - 01 
+
+
+.. contents::
+    :backlinks: top
+
+
+------------------------------
+데이터 준비
+------------------------------
+
+''''''''''''''''''''''
+데이터 가져오기 
+''''''''''''''''''''''
+
+- 출처 : `Lahman 의 홈페이지 <http://www.seanlahman.com/baseball-archive/statistics/>`__ .
+    - 보고서의 상단 라벨을 클릭하면 Lahman의 홈페이지로 이동합니다.
+
+.. image:: ../images/demo/demo_batting_02.png
+    :alt: 데이터 - 02
+
+
+- 이들 데이터중에서 batting.csv 로 미국 야구의 타격 데이터를 이용하여 IRIS Studio 에서 여러 지표와 챠트를 만들어 봅니다.
+    - 참고로 보고서에 사용된 데이터는 batting.csv 의 "yearID" 컬럼으로부터 PTIME, DECADE 라는 2개의 컬럼을 만들어서 추가한 데이터입니다.
+
+.. image:: ../images/demo/demo_batting_03.png
+    :alt: 데이터 - 03
+
+
+
+''''''''''''''''''''''
+데이터 업로드
+''''''''''''''''''''''
+
+- 로컬 PC 에 다운로드된  Batting.csv 파일을 IRIS 의 minio 에 업로드합니다.
+
+.. image:: ../images/demo/demo_batting_04.png
+    :alt: 데이터 - 04
+
+
+- minio 에 BATTING 폴더를 만들고,Batting.csv 를 업로드합니다.
+
+.. image:: ../images/demo/demo_batting_05.png
+    :alt: 데이터 - 05
+
+
+
+''''''''''''''''''''''''''''
+데이터모델 만들기
+''''''''''''''''''''''''''''
+
+- minio 에 저장된 Batting.csv 를 데이터모델로 생성합니다.
+
+.. image:: ../images/demo/demo_batting_06.png
+    :alt: 데이터 - 06
+
+
+- 데이터모델 DEMO_BATTIMG_NEW 를 생성합니다.
+
+.. image:: ../images/demo/demo_batting_07.png
+    :alt: 데이터 - 07
+
+
+- 검색 메뉴에서 데이터 모델 DEMO_BATTIMG_NEW 를 조화해 봅니다.
+
+.. image:: ../images/demo/demo_batting_08.png
+    :alt: 데이터 - 08
+
+
+
+
+----------------------------------
+보고서 내용 요약
+----------------------------------
+
+1871년 ~ 2016년( DEMO_BATTIMG_NEW 에 입력한 데이터는 1871 ~ 2016년까지의 batting.csv 입니다 ) 까지의 미국 야구 타격 데이터에서
+타율, 출루율, 장타율 등 과 같은 타격 지표를 생성합니다.
+
+그리고 연도별로 타격 지표 추이를 볼 수 있도록 시계열챠트를 그려 보고
+클릭한 선수(PLAYERID) 의 개별 타격 지표를 볼 수 있도록 합니다.
+
+
+
+- 연도(yearID)별 데이터 
+
+.. image:: ../images/demo/demo_batting_09.png
+    :alt: 데이터 - 09
+
+
+
+- 선수(PLAYERID) 의 개별 데이터
+
+.. image:: ../images/demo/demo_batting_10.png
+    :alt: 데이터 - 10
+
+
+
+-------------------------
+따라하기
+-------------------------
+
+'''''''''''''''''''''''''''''''''
+캔버스 및 제목 만들기
+'''''''''''''''''''''''''''''''''
+
+- 캔버스 색상 지정 및 보고서 제목 라벨 만들기
+
+.. image:: ../images/demo/demo_batting_11.png
+    :alt: 데이터 - 11
+
+
+- 야구데이터의 출처를 **라벨 링크** 로 만들어 봅니다.
+
+.. image:: ../images/demo/demo_batting_12.png
+    :alt: 데이터 - 12
+
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+연도 선택하는 콤보박스와 해당 연도 데이터 및 타격 지표 통계 테이블
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. image:: ../images/demo/demo_batting_13.png
+    :alt: 데이터 - 13
+
+
+
+- 조회할 연도를 선택하는 콤보박스 만드는 과정입니다.(1번)
+    - 디폴트로 2016년을 지정하여 콤보박스를 클릭하지 않고도 자동실행되어 2016년 조회결과가 출력되게 합니다.
+
+.. image:: ../images/demo/demo_batting_14.png
+    :alt: 데이터 - 14
+
+
+- 조회할 연도의 Batting 데이터를 **챠트** 의 테이블로 출력하는 과정입니다.(2)
+    - 데이터 모델 DEMO_BATTIMG_NEW 
+    - 검색어 구문 해석 : **참고** 
+
+    .. code::
+
+        * yearID  = ${combo_1} | fields -PTIME,DECADE
+
+        데이터 모델 DEMO_BATTIMG_NEW 에서 yearID 가 콤보박스 변수 ${combo_1} 인 데이터만 가져옵니다.
+        그 중에서 PTIME, DECADE 컬럼은 제외하고 select 합니다.
+
+
+.. image:: ../images/demo/demo_batting_15.png
+    :alt: 데이터 - 15
+
+
+- 조회할 연도의 Batting 데이터로부터 타격지표 통계를 만들어서 테이블로 출력하는 과정입니다.(3)
+    - 야구 타격 지표 만드는 검색어   
+
+    .. code::
+
+        *  yearID = ${combo_1} 
+        | stats 
+          sum(G) as sum_G,
+          sum(AB) as sum_AB,
+          sum(R) as sum_R,
+          sum(H) as sum_H, 
+          sum(2B) as sum_2B,
+          sum(3B) as sum_3B,
+          sum(HR) as sum_HR,
+          sum(RBI) as sum_RBI,
+          sum(SB) as sum_SB,
+          sum(CS) as sum_CS,
+          sum(BB) as sum_BB,
+          sum(SO) as sum_SO,
+          sum(IBB) as sum_IBB,
+          sum(HBP) as sum_HBP,
+          sum(SH) as sum_SH,
+          sum(SF) as sum_SF,
+          sum(GIDP) as sum_GIDP 
+          BY yearID, PLAYERID  
+        | sql "select yearID ,PLAYERID, 
+                      sum_G, sum_AB, sum_H/sum_AB as BA,
+                      ((sum_H + sum_BB + sum_HBP ) / ( sum_AB+ sum_BB+ sum_HBP+ sum_SF) )as OBP,
+                      ((sum_H + sum_2B + 2 * sum_3B + 3 * sum_HR ) / sum_AB ) as SLG  
+               from angora where sum_AB > 0 "  
+        | stats count(*) as player수, avg(sum_G) as 평균경기수, avg(sum_AB) as 평균타석, 
+          avg(BA) as 평균타율, avg(OBP) as 평균출루율, avg(SLG) as  평균장타율,
+          min(sum_G) as 최소경기수, min(sum_AB) as 최소타석, min(BA) as 최소타율, 
+          min(OBP) as 최소출루율, min(SLG) as  최소장타율,
+          max(sum_G) as 최대경기수, max(sum_AB) as 최대타석, 
+          max(BA) as 최대타율, max(OBP) as 최대출루율, max(SLG) as 최대장타율 
+          BY yearID
+
+
+.. image:: ../images/demo/demo_batting_16.png
+    :alt: 데이터 - 16
+
+
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+타격 지표 추이 그래프
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. image:: ../images/demo/demo_batting_17.png
+    :alt: 데이터 - 17
+
+
+- 타격 지표 데이터를 시계열로 꺽은 선 챠트로 추이를 확인할 수 있도록 그려봅니다.
+
+- 경기수와 타석 데이터를 시계열 챠트로 그립니다.(1)
+
+.. image:: ../images/demo/demo_batting_18.png
+    :alt: 데이터 - 18
+
+ - 범례를 클릭하면 챠트에서 해당 범례 데이터를 표시/미표시 할 수 있습니다.
+
+.. image:: ../images/demo/demo_batting_19.png
+    :alt: 데이터 - 19
+
+
+
+- 타율, 출루율, 장타율 데이터를 시계열 챠트로 그립니다.(2)
+    - 챠트의 시각화 설정은 경기수와 타석 시계열 챠트와 동일합니다.
+    - 검색어 구문
+    
+.. code::
+
+    *
+    | stats  sum(G) as sum_G,
+      sum(AB) as sum_AB, sum(R) as sum_R,
+      sum(H) as sum_H, 
+      sum(2B) as sum_2B,
+      sum(3B) as sum_3B,
+      sum(HR) as sum_HR,
+      sum(RBI) as sum_RBI,
+      sum(SB) as sum_SB,
+      sum(CS) as sum_CS,
+      sum(BB) as sum_BB,
+      sum(SO) as sum_SO,
+      sum(IBB) as sum_IBB,
+      sum(HBP) as sum_HBP,
+      sum(SH) as sum_SH,
+      sum(SF) as sum_SF,
+      sum(GIDP) as sum_GIDP  BY YEARID, PLAYERID  
+    | sql "select YEARID, PLAYERID, sum_H/sum_AB  as  BA, 
+          ((sum_H + sum_BB + sum_HBP ) / ( sum_AB+ sum_BB+ sum_HBP+ sum_SF) )as OBP ,
+          ((sum_H + sum_2B + 2 * sum_3B + 3 * sum_HR ) / sum_AB ) as SLG  from angora 
+          where sum_AB > 0 "  
+    | adv line avg(BA) as 평균타율, avg(OBP) as 평균출루율, avg(SLG) as  평균장타율,
+      min(BA) as 최소타율, min(OBP) as 최소출루율, min(SLG) as  최소장타율,
+      max(BA) as 최대타율, max(OBP) as 최대출루율, max(SLG) as  최대장타율
+      SPLITROW  YEARID COLSIZE 500
+
+
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+타석 100 이상인 선수들의 타격 지표 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. image:: ../images/demo/demo_batting_20.png
+    :alt: 데이터 - 20
+
+
+- 콤보박스에서 선택한 연도의 Batting 데이터에서 PLAYERID(선수) 별로 타격지표 통계를 만들어서 가져옵니다.
+    - `연도 선택하는 콤보박스와 해당 연도 데이터 및 타격 지표 통계 테이블`_ 참조합니다.
+
+.. mage:: ../images/demo/demo_batting_21.png
+    :alt: 데이터 - 21
+
+
+- 검색어 구문 
+
+.. code::
+
+   *  YEARID = ${combo_1}   
+   | stats  sum(G) as sum_G,
+     sum(AB) as sum_AB,
+     sum(R) as sum_R,
+     sum(H) as sum_H, 
+     sum(2B) as sum_2B,
+     sum(3B) as sum_3B,
+     sum(HR) as sum_HR,
+     sum(RBI) as sum_RBI,
+     sum(SB) as sum_SB,
+     sum(CS) as sum_CS,
+     sum(BB) as sum_BB,
+     sum(SO) as sum_SO,
+     sum(IBB) as sum_IBB,
+     sum(HBP) as sum_HBP,
+     sum(SH) as sum_SH,
+     sum(SF) as sum_SF,
+     sum(GIDP) as sum_GIDP BY YEARID, PLAYERID  
+   | sql "select YEARID, PLAYERID, sum_G as 경기수, sum_AB as 타석수, sum_H/sum_AB as 타율,
+          (sum_H + sum_BB + sum_HBP ) / ( sum_AB+ sum_BB+ sum_HBP+ sum_SF) as 출루율,
+          ((sum_H + sum_2B + 2 * sum_3B + 3 * sum_HR ) / sum_AB) as 장타율 from angora 
+          where sum_AB > 100"
+   | sort -타율
+
+
+
+
+''''''''''''''''''''''''''''''''''''''''''''
+PLAYERID 별 지표 추이
+''''''''''''''''''''''''''''''''''''''''''''
+
+-  **타석 100 이상인 선수들의 타격 지표** 에서 클릭한 PLAYERID 의 활동기간별 타격 지표 추이를 3개의 챠트로 보여줍니다.
+    
+.. image:: ../images/demo/demo_batting_22.png
+    :alt: 데이터 - 22
+
+
+- 라벨에서 클릭한 PLAYERID 로 자동 변경되는 부분
+    - 라벨 데이터 탭에서 **트리거설정**을 체크하고, PLAYERID 별 타격지표 테이블을 체크합니다.
+        - 체크를 하면 대상 오브젝트id 를 확인할 수 있습니다.
+    - **전체 변수명 보기** 를 통해 변수명이 ${area_2} 임을 확인할 수 있습니다.
+    - 라벨 데이터 탭에서 **설정할 변수/값** 에서 ${area_2}  로 입력하면 이벤트로 클릭되는 PLAYERID 로 자동으로 변경됩니다.
+    - 라벨의 내용이 바뀌는 것은 편집 화면에서는 바로 확인이 안되며, **저장** 후 **보기** 를 통해 확인할 수 있습니다.
+
+.. image:: ../images/demo/demo_batting_23.png
+    :alt: 데이터 - 23
+
+
+
+.. image:: ../images/demo/demo_batting_24.png
+    :alt: 데이터 - 24
+
+
+
