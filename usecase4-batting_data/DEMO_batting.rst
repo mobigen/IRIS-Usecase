@@ -125,7 +125,6 @@ Studio 보고서 따라하기
 - 야구데이터의 출처를 **라벨 링크** 로 만들어 봅니다.
 
 .. image:: ../images/demo/demo_batting_12.png
-    :scale: 60%
     :alt: 데이터 - 12
 
 
@@ -340,7 +339,6 @@ PLAYERID 별 지표 추이
 -  **타석 100 이상인 선수들의 타격 지표** 에서 클릭한 PLAYERID 의 활동기간별 타격 지표 추이를 3개의 챠트로 보여줍니다.
     
 .. image:: ../images/demo/demo_batting_22.png
-    :scale: 80%
     :alt: 데이터 - 22
 
 
