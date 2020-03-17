@@ -66,7 +66,7 @@ IRIS Studio 를 이용하여
 
 - 로컬 PC 에 다운로드된 파일들을 IRIS 의 **HDFS브라우저** 를 이용하여 MinIO 에 업로드합니다.
 
-`MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`_
+`MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`__
 
 
 
@@ -76,10 +76,11 @@ IRIS Studio 를 이용하여
 '''''''''''''''''''''''''''''''''''''''''''''''
 
 - **데이터모델** 메뉴에서 MinIO 에 저장된 파일들을 데이터모델로 생성합니다.
-    - 참고 : `데이터모델 만들기 - MinIO <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id3>`_
+    - 참고 : `데이터모델 만들기 - MinIO <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id3>`__
+
 
 .. list-table::
-    :heaer-rows: 1
+    :header-rows: 1
 
     * - 모델 이름
       - 설 명  
