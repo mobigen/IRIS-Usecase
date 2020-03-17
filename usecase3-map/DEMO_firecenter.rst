@@ -20,9 +20,9 @@ IRIS Studio 를 이용하여
 데이터 준비
 ------------------------------
 
-''''''''''''''''''''''
+''''''''''''''''''''''''''''''''
 데이터 가져오기 
-''''''''''''''''''''''
+''''''''''''''''''''''''''''''''
 
 - 출처 : `서울시 열린 데이터 광장 <https://data.seoul.go.kr/dataList/datasetList.do>`__ 
     - 보고서의 상단 오른쪽 라벨을 클릭하면 출처인 서울시 열린 데이터 광장으로 이동합니다.
@@ -66,7 +66,7 @@ IRIS Studio 를 이용하여
 
 - 로컬 PC 에 다운로드된 파일들을 IRIS 의 **HDFS브라우저** 를 이용하여 MinIO 에 업로드합니다.
 
-`MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`__
+`MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`_
 
 
 
@@ -76,7 +76,7 @@ IRIS Studio 를 이용하여
 '''''''''''''''''''''''''''''''''''''''''''''''
 
 - **데이터모델** 메뉴에서 MinIO 에 저장된 파일들을 데이터모델로 생성합니다.
-    - 참고 : `데이터모델 만들기 - MinIO <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id3>`__
+    - 참고 : `데이터모델 만들기 - MinIO <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id3>`_
 
 .. list-table::
     :heaer-rows: 1
