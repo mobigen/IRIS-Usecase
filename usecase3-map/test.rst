@@ -42,8 +42,9 @@ IRIS Studio 를 이용하여
 
 `MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`__
 
+
 .. list-table::
-    :heaer-rows: 1
+    :header-rows: 1
 
     * - 모델 이름
       - 설 명  
