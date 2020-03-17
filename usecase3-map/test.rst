@@ -32,3 +32,12 @@ IRIS Studio 를 이용하여
         - 서울시 열린데이터 광장 `서울시 열린 데이터 광장 <https://data.seoul.go.kr/dataList/datasetList.do>`__ 
     - 서울시 구단위 행정 경계 데이터 ( SHP 파일 )
         - 국토교통부 행정구역도 `공공 데이터 포털 <https://www.data.go.kr/dataset/3046391/openapi.do>`__
+
+
+'''''''''''''''''''''''''''''''''''
+데이터 업로드
+'''''''''''''''''''''''''''''''''''
+
+- 로컬 PC 에 다운로드된 파일들을 IRIS 의 **HDFS브라우저** 를 이용하여 MinIO 에 업로드합니다.
+
+`MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`__
