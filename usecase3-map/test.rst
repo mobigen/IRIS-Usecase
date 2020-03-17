@@ -41,3 +41,23 @@ IRIS Studio 를 이용하여
 - 로컬 PC 에 다운로드된 파일들을 IRIS 의 **HDFS브라우저** 를 이용하여 MinIO 에 업로드합니다.
 
 `MinIO 에 데이터 업로드 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#minio>`__
+
+.. list-table::
+    :heaer-rows: 1
+
+    * - 모델 이름
+      - 설 명  
+    * - SEOUL_SAFETY_CENTER_COOR
+      - 서울시 안전센터 위치
+    * - SEOUL_MELT_FIRE_CAUSE
+      - 서울시 소방서별 화재원인 분포
+    * - SEOUL_GU_WGS84
+      - 서울 행정구 경계 polygon WGS_84
+    * - SEOUL_GU_FIRE_CAUSE
+      - 서울시 구별 화재원인 통계
+    * - SEOUL_GU_COORDINATES
+      - 서울 구청 좌표 및 정보
+    * - SEOUL_FIRE_STA_COOR
+      - 서울시 소방서 좌표
+    * - SEOUL_FIRE_CAUSE
+      - 서울시 관할 소방서별 화재원인(2011 ~ 2018년)
