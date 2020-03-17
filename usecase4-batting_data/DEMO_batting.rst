@@ -62,6 +62,7 @@ MinIO 에 데이터 업로드
 
 - **데이터모델** 메뉴에서 MinIO 에 저장된 Batting.csv 를 데이터모델로 생성합니다.
 
+
 .. image:: ../images/demo/demo_batting_06.png
     :alt: 데이터 - 06
 
