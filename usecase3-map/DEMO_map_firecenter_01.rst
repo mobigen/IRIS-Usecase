@@ -107,7 +107,7 @@ Studio 보고서 따라하기
 ----------------------------------
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-map 1 :서울시 안전센터 및 관할 소방서 위치 정보
+map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. image:: ../images/demo/demo_fire_06.png
@@ -115,7 +115,7 @@ map 1 :서울시 안전센터 및 관할 소방서 위치 정보
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-레이어별 데이터 와 시각화옵션 설정
+레이어별 데이터와 시각화옵션 설정
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - 구경계 레이어
@@ -132,7 +132,44 @@ map 1 :서울시 안전센터 및 관할 소방서 위치 정보
 .. image:: ../images/demo/demo_fire_09.png
     :alt: map - 09 
 
+
+- 소방서 레이어
+
+.. image:: ../images/demo/demo_fire_10.png
+    :alt: map - 10 
+
     
+- 참고 : 지도 레이어의 시각화옵션 설정은  `IRIS Studio - 수원시 공공 데이터 예제 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#>`__ 에서
+ `주차장 레이어 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#id8>`__  를 참고하세요.
+
+
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+선택한 연도의 소방서별 화재 원인 통계 : 챠트 - 테이블
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. image:: ../images/demo/demo_fire_11.png
+    :alt: map - 11
+
+
+- 조회할 연도를 선택하기 위해 **콤보박스**를 만듭니다.
+    - `콤보 박스 생성 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html?highlight=%EC%BD%A4%EB%B3%B4%EB%B0%95%EC%8A%A4#id7>`__
+
+
+- **데이터 출처**를 라벨로 표현합니다.
+    - 참고 : `라벨 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/index2.html?highlight=%EB%9D%BC%EB%B2%A8#label>`__  에서 라벨 링크 부분을 참조하세요.
+    - `미국 야구 데이터를 활용한 Studio 보고서 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html>`__  에서 `캔버스 및 제목 라벨 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id5>`__ .
+
+
+- 테이블에 출력되는 데이터는 콤보박스에 선택한 연도에 해당하는 데이터로만 필터링되어 출력됩니다.
+    - `콤보박스를 활용하여 데이터 필터링하기 <http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html?highlight=%ED%8A%B8%EB%A6%AC%EA%B1%B0>`__
+
+- 테이블에 출력되는 데이터는 다른 오브젝트의 트리거 설정 시에 **클릭** 이벤트 시 이벤트값으로 전달되도록 설정합니다. 
+    - Manual `IRIS STUDIO - 보고서 작성 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index2.html#id8>`__  에서 `이벤트값 전달 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  과 `트리거 설정 <`이벤트값 전달 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__
+->`__  을 참조하세요.
+   
+
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 map 2 :  구별 화재건수
