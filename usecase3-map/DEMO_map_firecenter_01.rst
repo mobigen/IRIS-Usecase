@@ -172,6 +172,6 @@ map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
 map 2 :  구별 화재건수
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-행정구 경계 geometry 정보가 있는 테이블(SEOUL_GU_WGS84),
-행정구 정보 테이블(SEOUL_GU_COORDINATES )
-관할소방서별 화재 테이블(SEOUL_FIRE_CAUSE ) 를 join 한 데이터 이용
+- 행정구 경계 geometry 정보가 있는 테이블(SEOUL_GU_WGS84)
+- 행정구 정보 테이블(SEOUL_GU_COORDINATES )
+- 관할소방서별 화재 테이블(SEOUL_FIRE_CAUSE ) 를 join 한 데이터 이용
