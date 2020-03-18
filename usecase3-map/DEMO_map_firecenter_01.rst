@@ -2,9 +2,7 @@
 IRIS Studio - DEMO_서울시 안전센터_소방서 위치 및 화재 통계
 =======================================================================================================================
 
-IRIS Studio 를 이용하여
- `서울시 열린 데이터 광장 <https://data.seoul.go.kr/dataList/datasetList.do>`__ 에 있는 
-서울시 안전센터 관할 위치 정보와 서울시 소방서 관할 위치 정보와 서울시 원인별 화재 통계 데이터를
+IRIS Studio 를 이용하여 `서울시 열린 데이터 광장 <https://data.seoul.go.kr/dataList/datasetList.do>`__ 에 있는 서울시 안전센터 관할 위치 정보와 서울시 소방서 관할 위치 정보와 서울시 원인별 화재 통계 데이터를
 지도와 챠트로 만들어 봅니다.
 
 
@@ -166,8 +164,7 @@ map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
     - `콤보박스를 활용하여 데이터 필터링하기 <http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html?highlight=%ED%8A%B8%EB%A6%AC%EA%B1%B0>`__
 
 - 테이블에 출력되는 데이터는 다른 오브젝트의 트리거 설정 시에 **클릭** 이벤트 시 이벤트값으로 전달되도록 설정합니다. 
-    - Manual `IRIS STUDIO - 보고서 작성 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index2.html#id8>`__  에서 `이벤트값 전달 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  과 `트리거 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__
- 을 참조하세요.
+    - Manual `IRIS STUDIO - 보고서 작성 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index2.html#id8>`__  에서 `이벤트값 전달 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  과 `트리거 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  을 참조하세요.
    
 
 
@@ -175,6 +172,6 @@ map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
 map 2 :  구별 화재건수
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
- 행정구 경계 geometry 정보가 있는 테이블(SEOUL_GU_WGS84),
- 행정구 정보 테이블(SEOUL_GU_COORDINATES )
- 관할소방서별 화재 테이블(SEOUL_FIRE_CAUSE ) 를 join 한 데이터 이용
+행정구 경계 geometry 정보가 있는 테이블(SEOUL_GU_WGS84),
+행정구 정보 테이블(SEOUL_GU_COORDINATES )
+관할소방서별 화재 테이블(SEOUL_FIRE_CAUSE ) 를 join 한 데이터 이용
