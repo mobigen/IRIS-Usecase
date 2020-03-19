@@ -151,19 +151,25 @@ map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
 
 
 조회할 연도를 선택하기 위해 콤보박스를 만듭니다.
+
 `콤보 박스 생성 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html?highlight=%EC%BD%A4%EB%B3%B4%EB%B0%95%EC%8A%A4#id7>`__
 
 
 데이터 출처를 라벨로 표현합니다.
-`IRIS-Manual : 라벨 링크  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/index2.html?highlight=%EB%9D%BC%EB%B2%A8#label>`__  
+
+`IRIS-Manual : 라벨 링크  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/index2.html?highlight=%EB%9D%BC%EB%B2%A8#label>`__ 
+
 `IRIS-Usecase : 미국 야구 데이터를 활용한 Studio 보고서 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html>`__  에서 `캔버스 및 제목 라벨 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/DEMO_batting.html#id5>`__  부분을 참조하세요.
 
 
 테이블에 출력되는 데이터는 콤보박스에 선택한 연도에 해당하는 데이터로만 필터링되어 출력됩니다.
+
 `IRIS-Tutorial : 콤보박스를 활용하여 데이터 필터링 <http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html?highlight=%ED%8A%B8%EB%A6%AC%EA%B1%B0>`__ 
 
 테이블에 출력되는 데이터는 다른 오브젝트의 트리거 설정 시에 클릭 이벤트 시 이벤트값으로 전달되도록 설정합니다. 
+
 `IRIS-Manual : 보고서 작성 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index2.html#id8>`__  에서 `이벤트값 전달 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  과 `트리거 설정 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html?highlight=%EC%9D%B4%EB%B2%A4%ED%8A%B8#id13>`__  을 참조하세요.
+   
    
 .. image:: ../images/demo/demo_fire_12.png
     :alt: map - 12 
