@@ -137,7 +137,7 @@ map 1 : 서울시 안전센터 및 관할 소방서 위치 정보
     :alt: map - 10 
 
     
-참고 : 지도 레이어의 시각화옵션 설정은  `IRIS Studio - 수원시 공공 데이터 예제 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#>`__ 에서 `주차장 레이어 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#id8>`__  를 참고하세요.
+참고 : 지도 레이어의 시각화옵션 설정은  `IRIS Studio - 수원시 공공 데이터 예제 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v02.html#>`__ 에서 `주차장 레이어 만들기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#id8>`__  를 참고하세요.
 
 
 
