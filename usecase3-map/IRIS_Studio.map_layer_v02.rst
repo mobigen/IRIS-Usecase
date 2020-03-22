@@ -7,11 +7,7 @@ IRIS Studio - 수원시 공공 데이터 예제
 위/경도 좌표가 있는 데이터를 마커(점 또는 깃발)로 찍어서 지도로 보여주는 보고서입니다.
 수원시의 공공 데이터 5개를 각각의 레이어로 만들어서 지도에 포인트로 표시하여 각각의 아이템들의 지도상의 분포를 보여줍니다.
 
-|
-
 해당 데이터들을 `IRIS DB에 테이블(Local 및 Global 테이블)로 생성 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Database/user_guide/doc/01.query.html>`__ 한 후에 IRIS Studio 의 보고서에서 Select Query 로 조회하는 예제입니다.    
-
-|
 
 출처 : `공공데이터포털 <https://www.data.go.kr/search/index.do>`__ 
 
