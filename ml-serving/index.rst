@@ -9,4 +9,4 @@ IRIS Discovery Service의 M/L(Machine Learinig)알고리즘 기반의 명령어�
     mnist_number.rst
     mnist_clothes.rst
     boston_housing.rst
-	multi_in_out.rst
+    multi_in_out.rst
