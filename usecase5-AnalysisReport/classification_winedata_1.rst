@@ -5,7 +5,7 @@ Wine 품종 분류하기 : M/L Classification
 
 3개의 포도 품종으로 만든 와인과 와인의 13개의 특성(feature) 값을 측정한 데이터입니다.
 
-이 3개의 포도 품종으로 각각 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
+이 3개의 포도 품종으로 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
 
 학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 분류기 모델을 훈련시키고, 
 
@@ -76,7 +76,7 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
 '''''''''''''''''''''''''''''''''''
 
 - 데이터모델 메뉴에서 MinIO 에 저장된 Train_wine_data.csv,  Test_wine_data.csv 를 데이터모델로 생성합니다.
-    - DEMO_TRAIN_WINE ,  DEMO_TEST_WINE
+    - DEMO_TRAIN_WINE ,  DEMO_TEST_WINE 
     - 숫자형 데이터는 데이터 타입을 TEXT 에서 REAL 로 변경하여 데이터 모델을 생성합니다.
 
 .. image:: ../images/demo/ml_cls_02.png
@@ -106,12 +106,18 @@ Machine Learining 모델 만들기
     현재 구현된 스케일링은 standard, minmax 가 있습니다.
 
     1) Standard 스케일러
-       각 feature의 평균을 0, 분산을 1로 변경합니다. 모든 특성들이 같은 스케일을 갖게 됩니다.|
+       각 feature의 평균을 0, 분산을 1로 변경합니다. 모든 특성들이 같은 스케일을 갖게 됩니다.
     2) MinMax 스케일러
        모든 feature가 0과 1사이에 위치하도록 만듭니다. 데이터가 2차원 셋일 경우, 모든 데이터는 x축의 0과 1 사이에, y축의 0과 1사이에 위치하게 됩니다.
 
-    검색 command 예시 : 
+|
+
+- 검색 command 예시 
+
+.. code::
+
     * | scaler minmax  Alcohol to Alcohol_s, Malic_acid to Malic_acid_s. Ash to Ash_s
+
 
 
 
@@ -155,16 +161,19 @@ RandomForest classification 모델 학습
 
 
 - command 의 의미 
-    - 13개 feature 를 minmax 스케일링으로 전처리하고
-    - RandomForestClassification 알고리즘으로 fit
-        - FEATURE 컬럼은 13개의 스케일링 변환된 컬럼
-        - LABEL 컬럼은 품종을 나타내는 classId 컬럼
-        - fit 으로 학습된 모델은 DEMO_02_RF_CLASSIFICATION_WINE 이라는 모델이름으로 저장
+
+.. code::
+
+    13개 feature 를 minmax 스케일링으로 전처리하고 RandomForestClassification 알고리즘으로 fit
+     - FEATURE 는 13개의 스케일링 변환된 컬럼
+     - LABEL 은 품종을 나타내는 classId 컬럼
+     - fit 으로 학습된 모델은 DEMO_02_RF_CLASSIFICATION_WINE 이라는 모델이름으로 저장
 
 
-- IRIS Analyzer 의 검색 메뉴에서 IRIS 배포 시 저장된 분석 탬플릿 인 **DEMO_RF_분류_와인_TRAIN**
-    - 학습용 wine데이터 모델과 모델 생성 code 가 같이  저장되어 있습니다. 더블클릭하여 검색 메뉴로 불러오기를 할 수 있습니다.
-    - 모델 결과는 동일한 이름을 사용할 수 없으므로 만약 DEMO_02_EF_CLASSIFICATION_WINE 라는 모델이름이 이미 있다면 다른 이름으로 수정해서 실행합니다.
+- IRIS Analyzer 의 **검색** 메뉴에서 **분석 탬플릿** 인 **DEMO_RF_분류_와인_TRAIN**  이 배포되어 있습니다.
+    - 학습용 wine데이터 모델과 모델 생성 code 가 같이 저장되어 있습니다. 더블클릭하여 검색 메뉴로 불러오기를 할 수 있습니다.
+    - 모델 결과는 동일한 이름을 사용할 수 없으므로 그대로 실행하면 에러가 발생합니다.
+    - **fit** 으로 새 모델을 생성하려면 DEMO_02_RF_CLASSIFICATION_WINE 가 아닌 다른 모델 이름으로 수정해서 실행하시기 바랍니다.
 
 
 |
@@ -210,7 +219,8 @@ RandomForest classification 모델 학습
     F1 = 2 * precision * recall / (precision + recall)
 
 
-    참고) 조화평균은 측정값의 역수를 합한 값으로 평균을 구한 값. 샘플의 수가 집단별로 동일하지 않을 때 적용하며, 극단적인 값의 영향력을 줄이기 위해 사용되곤 한다. 
+    참고) 조화평균은 측정값의 역수를 합한 값으로 평균을 구한 값. 샘플의 수가 집단별로 동일하지 않을 때 적용하며, 
+         극단적인 값의 영향력을 줄이기 위해 사용되곤 합니다. 
 
 
 - fit 명령어 실행 결과로 정확도(accuracy), 정밀도(precision), 재현율(recall), F1 값을 모델의 성능 지표로 출력합니다.
@@ -222,13 +232,16 @@ RandomForest classification 모델 학습
 '''''''''''''''''''''''''''''''''''''''''''''
 
 학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
+
 `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
 
 
 테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
 output 으로 품종을 예측합니다.
-품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 
-분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
+
+품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
+
+|
 
 - 검색 명령어 창에서 실행하는 Command 예시 
 
@@ -276,10 +289,10 @@ output 으로 품종을 예측합니다.
 
 |
 
-원인을 알아보고 더 성능 좋은 모델을 만들기 위해서는,
-정확도 높은 모델이 나올 때 까지 
+원인을 알아보고 더 성능 좋은 모델을 만들기 위해서는, 정확도 높은 모델이 나올 때 까지 
 2차, 3차 학습 등 1차 학습과 비슷한 과정들이 추가로 필요합니다.
 
+|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 참고 : 보고서 분류_RF_DC_1차시험_와인데이터
