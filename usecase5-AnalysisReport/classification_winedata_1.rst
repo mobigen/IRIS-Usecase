@@ -222,7 +222,8 @@ RandomForest classification 모델 학습
 '''''''''''''''''''''''''''''''''''''''''''''
 
 학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
-**predict**  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
+`predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
+
 
 테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
 output 으로 품종을 예측합니다.
@@ -289,3 +290,5 @@ output 으로 품종을 예측합니다.
 13개 feature 의 분포를 R-studio 를 이용하여 box-plot 으로 그린 보고서 입니다.
 
 
+.. image:: ../images/demo/ml_cls_07.png
+    :alt: 데이터 - 07
