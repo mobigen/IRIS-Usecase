@@ -4,15 +4,11 @@ M/L Classification : Wine 품종 분류하기
 ====================================================================================
 
 3개의 포도 품종으로 만든 와인과 와인의 13개의 특성(feature) 값을 측정한 데이터입니다.
-
 이 3개의 포도 품종으로 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
-
 학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 분류기 모델을 훈련시키고, 
-
 테스트 데이터로 분류기 모델을 검증합니다.
 
 1차로 13개 feature 전부를 대상으로 
-
 RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성하고, 모델의 적합성을 검증해 봅니다.
 
 |
@@ -96,7 +92,6 @@ Machine Learining 모델 만들기
 '''''''''''''''''''''''''''''
 
 - wine 별로 측정한 13개의 feature 데이터를 스케일링 합니다. 여기서는 minmax scaling 을 사용합니다.
-
 - 사용 command : `scaler <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/scaler.html>`__
 
 .. code:: 
