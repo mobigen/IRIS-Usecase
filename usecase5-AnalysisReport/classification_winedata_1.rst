@@ -299,8 +299,8 @@ output 으로 품종을 예측합니다.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `분류_RF_DC_1차시험_와인데이터 <http://b-iris.mobigen.com:80/studio/exported/abcb0c12b8ee4b68a0e393820cf48b2cf3219a48018149ffb23a87ba19c15460>`__ 는 
-테스트 데이터의 예측 결과를 bar-chart 로 그리고, 
-13개 feature 의 분포를 R-studio 를 이용하여 box-plot 으로 그린 보고서 입니다.
+테스트 데이터를 RandomForest 와 DecisionTree 모델로 각각 예측한 결과를 bar-chart 로 그리고, 
+13개 feature 의 분포를 그린 box-plot 들을 링크로 만든 보고서 입니다.
 
 
 .. image:: ../images/demo/ml_cls_07.png
