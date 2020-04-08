@@ -220,6 +220,17 @@ RandomForest classification 모델 학습
 
 - fit 명령어 실행 결과로 정확도(accuracy), 정밀도(precision), 재현율(recall), F1 값을 모델의 성능 지표로 출력합니다.
 
+- 생성한 Machine Learning 모델은 `mlmodel <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html>`__ 명령어로 조회할 수 있습니다.
+
+.. code::
+
+    mlmodel summary DEMO_02_RF_CLASSIFICATION_WINE
+
+
+.. image:: ../images/demo/ml_cls_09.png
+    :alt: 데이터 - 09
+
+
 |
 
 '''''''''''''''''''''''''''''''''''''''''''''
