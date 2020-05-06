@@ -14,5 +14,4 @@ IRIS Analyzer와 Studio를 활용한 다양한 분석수행과 결과를 보고�
     usecase1-syslog/index.rst
     ml-serving/index.rst
     ml/index.rst 
-    usecase5-AnalysisReport/index.rst
     BLOG/index.rst
