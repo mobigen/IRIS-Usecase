@@ -66,6 +66,7 @@ Studio : 원유 및 석유 제품 수출입 현황 (1)
 - 변환 후 데이터 (oil.melt)
 
 .. image:: images/oil_06.png
+   :scale: 40%
    :alt: oil_06 upload
 
 |
