@@ -125,6 +125,7 @@ IRIS Studio 의 보고서에는 다른 보고서를 불러올 수 있습니다.
 
 
 .. image:: images/oil_09.png
+   :scale: 40%
    :alt: oil_09 upload
 
 
