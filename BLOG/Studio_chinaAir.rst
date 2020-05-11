@@ -1,7 +1,8 @@
 Studio : 북경 대기질 분석
 ===================================================================
 
-UCI M/L Repository에는 분석에 사용할 만한 데이터 셋이 많이 있습니다.
+
+| UCI M/L Repository에는 분석에 사용할 만한 데이터 셋이 많이 있습니다.
 | 그 중에서 우리 나라와 가까이 있으면서 우리 나라의 공기질에 큰 영향을 미치는 국가인 중국의 북경 대기질 측정 데이터셋(`Beijing Multi-Site Air-Quality Data <https://archive.ics.uci.edu/ml/datasets/Beijing+Multi-Site+Air-Quality+Data>`__ 을 가져와서 챠트를 그려보았습니다.
 | 데이터는 중국 베이징시의 Beijing Municipal Environmental Monitoring Center 에서 베이징 시내 12개 사이트에서 
 | 6 개의 주요 대기 오염 물질과 6 개의 관련 기상 변수를 측정한 값으로 이루어져 있습니다.
