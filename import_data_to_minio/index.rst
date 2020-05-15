@@ -1,3 +1,0 @@
-Import Data to Minio
-=====================
-
