@@ -31,7 +31,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 |
 
 
-테이블 : SQL 문 - CASE WHEN 예제
+테이블 : sql 문 - CASE WHEN 예제
 -------------------------------------------
 
 .. code::
@@ -44,7 +44,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
                      THEN '방화'
                      ELSE  FIRE_CAUSE  
                 END CAUSE_KIND
-    from angora
+    from angora"
 
 
 | FIRE_CENTER 가 '종로소방서' 인 데이터 중에서( 파이프로 전달함 ) **CASE WHEN** 문으로
@@ -61,7 +61,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 |
 
 
-테이블 : STATS 문
+테이블 : stats 문
 -------------------------------------------
 
 .. code::
@@ -74,7 +74,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
                      THEN '방화'
                      ELSE  FIRE_CAUSE  
                 END CAUSE_KIND
-         from angora |
+         from angora" |
     stats SUM(CNT) as SUM_CNT by YEAR,FIRE_CENTER, CAUSE_KIND
 
 
@@ -89,7 +89,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 
 |
 
-테이블 : SORT 
+테이블 : sort 
 ---------------------------------------------
 
 .. code::
@@ -102,7 +102,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
                      THEN '방화'
                      ELSE  FIRE_CAUSE  
                 END CAUSE_KIND
-         from angora |
+         from angora" |
     stats SUM(CNT) as SUM_CNT by YEAR,FIRE_CENTER, CAUSE_KIND |
     sort +YEAR
 
@@ -110,6 +110,7 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 | stats 로 나온 결과를 YEAR 변수의 값을 오름차순(점점 커지는 순서)로 출력합니다.
 | 자세한 설명 - 검색어 `SORT <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/sort.html>`__ 를 참조하세요.
 
+|
 
 .. image:: images/table_2_08.png
     :alt: table_2_08
