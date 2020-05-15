@@ -18,7 +18,6 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 | 기간 : 2011 ~ 2018년 연간 통계
 | 내용 : 서울시 소방서, 화재원인별 화재 발생 건수 통계
 
-|
 
 .. image:: images/table_1_01.png
     :scale: 60%
@@ -28,7 +27,6 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 - 팁 
     - 챠트를 테이블 유형으로 출력할 때의 시각화 옵션은 `IRIS Studio 보고서 시각화옵션 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index.html#id35>`__ 을 참조하세요.
 
-|
 
 
 테이블 : sql 문 - CASE WHEN 예제
@@ -52,13 +50,11 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 | FIRE_CAUSE(화재원인) 이 "방화"로 시작하는 데이터는 CAUSE_KIND = '방화'
 | 그 외는 CAUSE_KIND = FIRE_CAUSE ( 나머지 "자연적인_요인" )
 
-|
 
 
 .. image:: images/table_2_06.png
     :alt: table_2_06
 
-|
 
 
 테이블 : stats 문
@@ -82,12 +78,11 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 | SQL 의 CASE WHEN 구문으로 새로 만든 CAUSE_KIND 컬럼으로 CNT(발생건수) 를 집계 하기 위해 STATS 를 사용합니다.
 | 자세한 설명 - 검색어 `STATS <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/stats.html>`__ 를 참조하세요.
 
-|
 
 .. image:: images/table_2_07.png
     :alt: table_2_07
 
-|
+
 
 테이블 : sort 
 ---------------------------------------------
@@ -110,7 +105,6 @@ Studio예제: 테이블과 검색어 2 (stats/sort)
 | stats 로 나온 결과를 YEAR 변수의 값을 오름차순(점점 커지는 순서)로 출력합니다.
 | 자세한 설명 - 검색어 `SORT <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/sort.html>`__ 를 참조하세요.
 
-|
 
 .. image:: images/table_2_08.png
     :alt: table_2_08
