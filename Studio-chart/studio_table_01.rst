@@ -19,6 +19,7 @@ Studio예제: 테이블과 검색어 1 (필터/where/sql case when)
 | 기간 : 2011 ~ 2018년 연간 통계
 | 내용 : 서울시 소방서, 화재원인별 화재 발생 건수 통계
 
+|
 
 .. image:: images/table_1_01.png
     :scale: 60%
@@ -49,6 +50,7 @@ Studio예제: 테이블과 검색어 1 (필터/where/sql case when)
 
 | FIRE_CENTER 가 '종로소방서' && YEAR=2018 인 데이터만 검색합니다.
 
+|
 
 .. image:: images/table_1_03.png
     :alt: table_1_03
@@ -68,6 +70,7 @@ Studio예제: 테이블과 검색어 1 (필터/where/sql case when)
 | 자세한 설명 - 검색어 `WHERE <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/where.html#where>`__ 
 
 
+|
 
 .. image:: images/table_1_04.png
     :alt: table_1_04
@@ -89,7 +92,7 @@ Studio예제: 테이블과 검색어 1 (필터/where/sql case when)
        END CAUSE_KIND
   from angora"
 
-
+|
 
 | FIRE_CENTER 가 '종로소방서' && YEAR=2018 인 데이터 중에서( 파이프로 전달함 ) **CASE WHEN** 문으로
 | FIRE_CAUSE(화재원인) 이 "실화"로 시작하는 데이터는 CAUSE_KIND = '실화'
