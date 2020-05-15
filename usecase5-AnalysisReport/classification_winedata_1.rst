@@ -101,7 +101,8 @@ Machine Learining 모델 만들기
        모든 feature가 0과 1사이에 위치하도록 만듭니다. 데이터가 2차원 셋일 경우, 모든 데이터는 x축의 0과 1 사이에, y축의 0과 1사이에 위치하게 됩니다.
 
 |
-- 검색 command 예시 
+
+- 검색 command 예시
 
 .. code::
 
@@ -234,11 +235,9 @@ RandomForest classification 모델 학습
 | 학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
 | `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
 
-| 테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
-output 으로 품종을 예측합니다.
+| 테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, output 으로 품종을 예측합니다.
 | 품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
 
-|
 - 검색 명령어 창에서 실행하는 Command 예시 
 
 .. code::
@@ -277,7 +276,6 @@ output 으로 품종을 예측합니다.
 
 테스트 데이터에서 품종 3번은 14개 와인 모두 예측을 하지 못했습니다.
 
-|
 .. image:: ../images/demo/ml_cls_06.png
     :alt: 데이터 - 06
 
