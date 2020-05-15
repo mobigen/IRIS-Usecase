@@ -6,9 +6,8 @@ tensorflow의 숫자 데이터로 학습을 진행하고, 개인 객체 저장�
 학습
 ----------------------------------------------------------------------------------------------------
 
-10개의 숫자 카테고리로 이루어진 7만장의 흑백 숫자 이미지를 다운로드, 전처리, 학습합니다.
-
-tensorflow 2.1.0 패키지가 필요합니다.
+| 10개의 숫자 카테고리로 이루어진 7만장의 흑백 숫자 이미지를 다운로드, 전처리, 학습합니다.
+| tensorflow 2.1.0 패키지가 필요합니다.
 
 ``pip install tensorflow==2.1.0``
 
@@ -54,9 +53,8 @@ tensorflow 2.1.0 패키지가 필요합니다.
 개인 객체저장소에 모델 업로드
 ----------------------------------------------------------------------------------------------------
 
-IRIS Discovery Service에 적재하기 위해, tar 파일로 압축하여 개인 객체저장소에 업로드합니다.
-
-boto3 패키지가 필요합니다.
+| IRIS Discovery Service에 적재하기 위해, tar 파일로 압축하여 개인 객체저장소에 업로드합니다.
+| boto3 패키지가 필요합니다.
 
 ``pip install boto3``
 
@@ -111,11 +109,9 @@ boto3 패키지가 필요합니다.
 적재
 ----------------------------------------------------------------------------------------------------   
 
-IRIS Discovery Service에 모델을 적재합니다.
-
-적재는 IRIS Discovery Service의 `mlmodel import  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import>`_ 를 사용합니다.
-
-IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path 옵션에 개인 객체저장소 정보, tar로 압축한 모델 경로를 입력합니다.
+| IRIS Discovery Service에 모델을 적재합니다.
+| 적재는 IRIS Discovery Service의 `mlmodel import  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import>`_ 를 사용합니다.
+| IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path 옵션에 개인 객체저장소 정보, tar로 압축한 모델 경로를 입력합니다.
 
 ``mlmodel import name=mnist_number type=tf category=classification algorithm=deep format=saved_model path=OBJECTSTORAGE.{CONNECTOR NAME}:model.tar``
 
@@ -131,9 +127,8 @@ IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path
 배포
 ----------------------------------------------------------------------------------------------------   
 
-IRIS Discovery Service가 관리하는 tensorflow serving에 모델을 배포합니다.
-
-배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
+| IRIS Discovery Service가 관리하는 tensorflow serving에 모델을 배포합니다.
+| 배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
 
 IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 
@@ -156,9 +151,8 @@ IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 서빙 상태 확인
 ----------------------------------------------------------------------------------------------------        
 
-배포한 mnist_number모델의 서빙 상태를 확인합니다.
-
-서빙 상태 확인은 IRIS Discovery Service의 `serving status  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status>`_ 를 사용합니다.
+| 배포한 mnist_number모델의 서빙 상태를 확인합니다.
+| 서빙 상태 확인은 IRIS Discovery Service의 `serving status  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status>`_ 를 사용합니다.
 
 IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 
@@ -205,9 +199,8 @@ python 스크립트 방식, DSL 설정파일 방식, curl 방식은 다음 유�
 DSL 데이터 소스 입력 방식
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-데이터 소스를 입력하여 예측합니다.
-
-예측(서빙)은 IRIS Discovery Service의 `serving predict  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
+| 데이터 소스를 입력하여 예측합니다.
+| 예측(서빙)은 IRIS Discovery Service의 `serving predict  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
 
 IRIS Discovery Service에서 mnist_test 모델 선택 후, 검색창에 아래 명령어를 입력합니다.
 
