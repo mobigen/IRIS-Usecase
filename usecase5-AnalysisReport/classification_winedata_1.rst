@@ -3,16 +3,13 @@
 M/L Classification : Wine 품종 분류하기
 ====================================================================================
 
-3개의 포도 품종으로 만든 와인과 와인의 13개의 특성(feature) 값을 측정한 데이터입니다.
-이 3개의 포도 품종으로 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
-학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 분류기 모델을 훈련시키고, 
-테스트 데이터로 분류기 모델을 검증합니다.
+| 3개의 포도 품종으로 만든 와인과 와인의 13개의 특성(feature) 값을 측정한 데이터입니다.
+| 이 3개의 포도 품종으로 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
+| 학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 분류기 모델을 훈련시키고, 테스트 데이터로 분류기 모델을 검증합니다.
 
-1차로 13개 feature 전부를 대상으로 
-RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성하고, 모델의 적합성을 검증해 봅니다.
+1차로 13개 feature 전부를 대상으로 RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성하고, 모델의 적합성을 검증해 봅니다.
 
 |
-
 
 .. contents::
     :backlinks: top
@@ -32,7 +29,8 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
 
 - 13개의 feature / 178 records wine 데이터
 
-.. code::
+.. code ::
+
     1) Alcohol
     2) Malic acid
     3) Ash
@@ -46,7 +44,6 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
    11) Hue
    12) OD280/OD315 of diluted wines
    13) Proline
-
 
 |
 
@@ -62,10 +59,9 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
 
 - 학습데이터와 테스트데이터 파일을 IRIS 의 **HDFS브라우저** 메뉴의  **MinIO** 를 선택하여 업로드합니다.
     - MinIO 에 데이터 업로드하기 : `MINIO 에 업로드하기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#minio>`__
-    
 
 |
-|
+
 
 '''''''''''''''''''''''''''''''''''
 데이터모델 만들기 - MinIO
@@ -78,7 +74,6 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
 .. image:: ../images/demo/ml_cls_02.png
     :alt: 데이터 - 02
 
-|
 |
 
 
@@ -106,7 +101,6 @@ Machine Learining 모델 만들기
        모든 feature가 0과 1사이에 위치하도록 만듭니다. 데이터가 2차원 셋일 경우, 모든 데이터는 x축의 0과 1 사이에, y축의 0과 1사이에 위치하게 됩니다.
 
 |
-
 - 검색 command 예시 
 
 .. code::
@@ -237,18 +231,14 @@ RandomForest classification 모델 학습
 테스트 데이터의 품종 예측하기
 '''''''''''''''''''''''''''''''''''''''''''''
 
-학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
+| 학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
+| `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
 
-`predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
-
-
-테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
+| 테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
 output 으로 품종을 예측합니다.
-
-품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
+| 품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
 
 |
-
 - 검색 명령어 창에서 실행하는 Command 예시 
 
 .. code::
@@ -288,10 +278,8 @@ output 으로 품종을 예측합니다.
 테스트 데이터에서 품종 3번은 14개 와인 모두 예측을 하지 못했습니다.
 
 |
-
 .. image:: ../images/demo/ml_cls_06.png
     :alt: 데이터 - 06
-
 
 |
 

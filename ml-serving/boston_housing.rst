@@ -6,9 +6,8 @@ boston housing 데이터로 집값 예측 예제 입니다.
 학습
 ----------------------------------------------------------------------------------------------------
 
-13개의 집값 관련 속성으로 이루어진 404 레코드를 다운로드, 전처리, 학습합니다.
-
-데이터에 대한 설명은 `여기 <https://keras.io/datasets/#usage_6>`_ 를 참조해주세요. 
+| 13개의 집값 관련 속성으로 이루어진 404 레코드를 다운로드, 전처리, 학습합니다.
+| 데이터에 대한 설명은 `여기 <https://keras.io/datasets/#usage_6>`_ 를 참조해주세요. 
 
 tensorflow 2.1.0 패키지가 필요합니다.
 
@@ -55,9 +54,8 @@ tensorflow 2.1.0 패키지가 필요합니다.
 개인 객체저장소에 모델 업로드
 ----------------------------------------------------------------------------------------------------
 
-IRIS Discovery Service에 적재하기 위해, tar 파일로 압축하여 개인 객체저장소에 업로드합니다.
-
-boto3 패키지가 필요합니다.
+| IRIS Discovery Service에 적재하기 위해, tar 파일로 압축하여 개인 객체저장소에 업로드합니다.
+| boto3 패키지가 필요합니다.
 
 ``pip install boto3``
 
@@ -112,9 +110,8 @@ boto3 패키지가 필요합니다.
 적재
 ----------------------------------------------------------------------------------------------------   
 
-IRIS Discovery Service에 모델을 적재합니다.
-
-적재는 IRIS Discovery Service의 `mlmodel import  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import>`_ 를 사용합니다.
+| IRIS Discovery Service에 모델을 적재합니다.
+| 적재는 IRIS Discovery Service의 `mlmodel import  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import>`_ 를 사용합니다.
 
 IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path 옵션에 개인 객체저장소 정보, tar로 압축한 모델 경로를 입력합니다.
 
@@ -132,9 +129,8 @@ IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path
 배포
 ----------------------------------------------------------------------------------------------------   
 
-IRIS Discovery Service가 관리하는 tensorflow serving에 모델을 배포합니다.
-
-배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
+| IRIS Discovery Service가 관리하는 tensorflow serving에 모델을 배포합니다.
+| 배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
 
 IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 
@@ -157,9 +153,8 @@ IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 서빙 상태 확인
 ----------------------------------------------------------------------------------------------------        
 
-배포한 multi_in_out모델의 서빙 상태를 확인합니다.
-
-서빙 상태 확인은 IRIS Discovery Service의 `serving status  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status>`_ 를 사용합니다.
+| 배포한 multi_in_out모델의 서빙 상태를 확인합니다.
+| 서빙 상태 확인은 IRIS Discovery Service의 `serving status  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status>`_ 를 사용합니다.
 
 IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 
@@ -222,17 +217,16 @@ IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.
 - DSL 데이터 소스 입력 방식
 - curl 방식
 
-이중 DSL 데이터 소스 입력 방식에 대해 진행합니다. 
-python 스크립트 방식, DSL 설정파일 방식, curl 방식은 다음 유즈케이스를 참조해주세요.
+| 이중 DSL 데이터 소스 입력 방식에 대해 진행합니다. 
+| python 스크립트 방식, DSL 설정파일 방식, curl 방식은 다음 유즈케이스를 참조해주세요.
 `mnist 옷 모델 적재, 예측  <http://docs.iris.tools/manual/IRIS-Usecase/ml-serving/mnist_clothes.html>`_ 을 참조해주세요.
 
 
 DSL 데이터 소스 입력 방식
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-데이터 소스를 입력하여 예측합니다.
-
-예측(서빙)은 IRIS Discovery Service의 `serving predict  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
+| 데이터 소스를 입력하여 예측합니다.
+| 예측(서빙)은 IRIS Discovery Service의 `serving predict  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
 
 IRIS Discovery Service에서 boston_housing_test 모델 선택 후, 검색창에 아래 명령어를 입력합니다.
 

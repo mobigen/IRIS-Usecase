@@ -14,9 +14,8 @@ https://github.com/myleott/mnist_png/blob/master/mnist_png.tar.gz
 개인 객체 저장소에 업로드
 ----------------------------------------------------------------------------------------------------
 
-다운로드 받은 이미지 파일을 개인 객체 저장소에 업로드합니다. 수동으로 업로드하거나 아래 스크립트를 실행합니다.
-
-아래는 업로드하는 python 스크립트 예제 입니다. 모두 업로드하는데 1~2시간정도 소요됩니다.
+| 다운로드 받은 이미지 파일을 개인 객체 저장소에 업로드합니다. 수동으로 업로드하거나 아래 스크립트를 실행합니다.
+| 아래는 업로드하는 python 스크립트 예제 입니다. 모두 업로드하는데 1~2시간정도 소요됩니다.
 
 - boto3 패키지가 필요합니다. ``pip install boto3``
 - 아래 인자를 입력해주세요.
@@ -86,9 +85,8 @@ https://github.com/myleott/mnist_png/blob/master/mnist_png.tar.gz
 
 연결정보 등록
 ----------------------------------------------------------------------------------------------------
-개인 객체저장소를 활용하기 위해 연결정보를 등록합니다.
-
-IRIS UI에서 아래와 같이 ``대시보드`` , ``연결정보`` 를 차례로 클릭합니다.
+| 개인 객체저장소를 활용하기 위해 연결정보를 등록합니다.
+| IRIS UI에서 아래와 같이 ``대시보드`` , ``연결정보`` 를 차례로 클릭합니다.
 
 .. image:: ../images/ml/general1.png
     :alt: 연결정보 클릭
@@ -112,9 +110,8 @@ IRIS UI에서 아래와 같이 ``대시보드`` , ``연결정보`` 를 차례로
 이미지 벡터화
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-mnist 숫자 이미지를 벡터 형태로 변환하여 tsv파일로 개인 객체 저장소에 저장합니다.
-
-검색창에 아래 명령어를 각각 입력합니다.
+| mnist 숫자 이미지를 벡터 형태로 변환하여 tsv파일로 개인 객체 저장소에 저장합니다.
+| 검색창에 아래 명령어를 각각 입력합니다.
 
 - 객체저장소의 mnist/0 폴더는 one-hot 백터 형식으로 라벨을 [1,0,0,0,0,0,0,0,0,0]로 할당하며, tag는 zero라고 줍니다.
 - 같은 방식으로 나머지 1~9 숫자 이미지도 벡터화합니다.
@@ -141,9 +138,8 @@ mnist 숫자 이미지를 벡터 형태로 변환하여 tsv파일로 개인 객�
 
 train/test 분리
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-img2tsv에서 생성한 tsv 파일을 train/test, 80 대 20 비율로 분리하여 개인 객체 저장소에 저장합니다. 추가적으로 label과 tag 컬럼으로 사전데이터(dict.tsv)를 생성합니다.
-
-검색창에 아래 명령어를 입력합니다.
+| img2tsv에서 생성한 tsv 파일을 train/test, 80 대 20 비율로 분리하여 개인 객체 저장소에 저장합니다. 추가적으로 label과 tag 컬럼으로 사전데이터(dict.tsv)를 생성합니다.
+| 검색창에 아래 명령어를 입력합니다.
 
 ``splitter src=OBJECTSTORAGE.MIN_AI:tsv train=(train.tsv, 0.8) test=(test.tsv, 0.2) dictionary=(dict.tsv, label, tag)``
 
@@ -160,9 +156,8 @@ img2tsv에서 생성한 tsv 파일을 train/test, 80 대 20 비율로 분리하�
 test 데이터 등록
 ----------------------------------------------------------------------------------------------------
 
-추후 예측에 활용하기 위해 splitter 명령어로 분리한 test데이터를 IRIS UI에 데이터 모델로 등록합니다.
-
-데이터모델 생성을 위해 ``대시보드`` - ``데이터모델`` 을 클릭합니다.
+| 추후 예측에 활용하기 위해 splitter 명령어로 분리한 test데이터를 IRIS UI에 데이터 모델로 등록합니다.
+| 데이터모델 생성을 위해 ``대시보드`` - ``데이터모델`` 을 클릭합니다.
 
 .. image:: ../images/ml/general4.png
     :alt: 데이터모델 클릭
@@ -414,9 +409,8 @@ test 데이터 등록
 학습
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-config에 앞서 업로드한 설정파일을 넣어 모델명을 tf_minist로하여 학습합니다.
-
-검색창에 아래 명령어를 입력합니다.
+| config에 앞서 업로드한 설정파일을 넣어 모델명을 tf_minist로하여 학습합니다.
+| 검색창에 아래 명령어를 입력합니다.
 
 ``fit deep batch_size=128 epochs=2 config=OBJECTSTORAGE.MIN_AI:angora_mnist_config.json into tf_mnist``
 
@@ -433,9 +427,8 @@ config에 앞서 업로드한 설정파일을 넣어 모델명을 tf_minist로�
      - {'accuracy': 0.41432425}
 
 
-accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 학습합니다.
-
-검색창에 아래 명령어를 입력합니다.
+| accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 학습합니다.
+| 검색창에 아래 명령어를 입력합니다.
 
 ``fit deep batch_size=128 epochs=3 retrain=True config=OBJECTSTORAGE.MIN_AI:angora_mnist_config.json into tf_mnist``
 
@@ -456,10 +449,8 @@ accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 
 평가
 ----------------------------------------------------------------------------------------------------
 
-평가는 IRIS Discovery Service의 `eval <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/eval.html>`_ 를 사용합니다.
-
-학습된 모델을 평가하기 위해 검색창에 아래 명령어를 입력합니다.
-평가 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다.
+| 평가는 IRIS Discovery Service의 `eval <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/eval.html>`_ 를 사용합니다.
+| 학습된 모델을 평가하기 위해 검색창에 아래 명령어를 입력합니다(평가 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다).
 
 ``model name = 'mnist_test' model_owner = root | eval deep tf_mnist feature=feature label=label rate=0.8 repeat=3``
 
@@ -484,10 +475,8 @@ accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 
 예측
 ----------------------------------------------------------------------------------------------------
 
-예측은 IRIS Discovery Service의 `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`_ 를 사용합니다.
-
-학습된 모델로 예측을 위해 검색창에 아래 명령어를 입력합니다.
-예측 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다.
+| 예측은 IRIS Discovery Service의 `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`_ 를 사용합니다.
+| 학습된 모델로 예측을 위해 검색창에 아래 명령어를 입력합니다(예측 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다).
 
 ``model name = 'mnist_test' model_owner = root | predict tf_mnist feature``
 
@@ -516,11 +505,9 @@ accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 
 배포
 ----------------------------------------------------------------------------------------------------
 
-배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
-
-학습 모델을 버저닝하여 서빙합니다.
-
-검색창에 아래 명령어를 입력합니다.
+| 배포는 IRIS Discovery Service의 `mlmodel deploy  <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy>`_ 를 사용합니다.
+| 학습 모델을 버저닝하여 서빙합니다.
+| 검색창에 아래 명령어를 입력합니다.
 
 ``mlmodel deploy tf_mnist label='test'``
 
@@ -540,12 +527,9 @@ accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 
 예측 (서빙)
 ----------------------------------------------------------------------------------------------------
 
-예측 (서빙)은 IRIS Discovery Service의 `serving predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
-
-앞서 배포한 모델을 테스트데이터로 예측합니다.
-예측 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다.
-
-검색창에 아래 명령어를 입력합니다.
+| 예측 (서빙)은 IRIS Discovery Service의 `serving predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict>`_ 를 사용합니다.
+| 앞서 배포한 모델을 테스트데이터로 예측합니다(예측 데이터는 앞서 생성한 ``mnist_test`` 를 사용합니다).
+| 검색창에 아래 명령어를 입력합니다.
 
 ``model name = 'mnist_test' | top 30 feature | serving predict tf_mnist col=feature shape=[(28,28,1)] layer_name=Conv1_input tag=(zero, one, two, three, four, five, six, seven, egiht, nine, ten)``
 
@@ -583,11 +567,10 @@ accuracy가 41% 입니다. 높이기 위해 epochs을 3번 더 주어 이어서 
 조회
 ----------------------------------------------------------------------------------------------------
 
-조회는 IRIS Discovery Service의 `mlmodel <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html>`_ ,
+| 조회는 IRIS Discovery Service의 `mlmodel <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html>`_ ,
 `serving status <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status>`_ 
 를 사용합니다.
-
-ml 모델 목록을 보기 위해 아래 명령어를 입력합니다. 배포한 모델은 ``serving`` 속성이 ``on`` 으로 됩니다.
+| ml 모델 목록을 보기 위해 아래 명령어를 입력합니다. 배포한 모델은 ``serving`` 속성이 ``on`` 으로 됩니다.
 
 ``mlmodel list``
 
