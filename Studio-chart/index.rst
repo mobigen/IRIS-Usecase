@@ -1,10 +1,10 @@
-SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제
+Studio : 챠트의 다양한 시각화 유형 예제
 =========================================================================
 
-M/L(Machine Learinig)알고리즘 기반의 이상 탐지(anomalies, outlier)와 예측(forecasts) 명령어를 이용한 데이터 분석 예제입니다. 
+Studio 의 챠트 메뉴에서 제공하는 시각화 유형들의 간단한 사용 예제 입니다.
 
 .. toctree::
     :hidden:
 
     studio_table_01.rst
-    studio_table_02.rst 
+    studio_table_02.rst
