@@ -71,7 +71,7 @@ Studio예제: 테이블과 검색어 3 (adv sankey)
                     ELSE  FIRE_CAUSE  
                END CAUSE_KIND  
         from angora" |
-    adv sankey sum(CNT) SPLITROW FIRE_CENTER, CAUSE_KIND, FIRE_CAUSE
+    adv sankey sum(CNT) SPLITROW FIRE_CENTER, FIRE_CAUSE, CAUSE_KIND
 
 
 
@@ -80,6 +80,9 @@ Studio예제: 테이블과 검색어 3 (adv sankey)
 | 자세한 설명 - 검색어 `adv <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/adv.html>`__ 를 참조하세요.
 
 |
+
+| SPLITROW 뒤에 나오는 필드가 sankey챠트의 각 NODE이며, FIRE_CENTER -> FIRE_CAUSE -> CAUSE_KIND  로 flow 가 정해집니다.
+| 선의 굵기는 각 NODE -> NODE 일 때의 값을 의미하며, 여기서는 CNT의 합계입니다.
 
 .. image:: images/table_3_10.png
     :alt: table_3_10
