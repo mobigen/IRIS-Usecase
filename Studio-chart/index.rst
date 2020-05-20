@@ -16,7 +16,6 @@ Studio 의 챠트 메뉴에서 제공하는 시각화 유형들의 간단한 사
     studio_chart_bar_02.rst
     studio_chart_pie.rst
     studio_chart_ts.rst
-    studio_chart_sankey.rst
     studio_chart_heatmap.rst
     studio_chart_number.rst
     studio_chart_gauge.rst
