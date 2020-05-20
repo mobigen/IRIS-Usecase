@@ -1,8 +1,8 @@
-Studio예제: 테이블과 검색어 3 (adv sankey)
+Studio예제: 테이블과 검색어 4 (adv heatmap)
 ========================================================================
 
-| IRIS Studio 의 **챠트-테이블** 의 sql 검색어 결과로 나온 데이터를 **adv sankey** 명령어로 시각화 챠트로 바로 그릴 수 있습니다.
-| 데이터를 sankey 챠트를 바로 그릴 수 있는 형식의 데이터로 변환하여 시각화 유형을 sankey 로 선택하면 바로 그려집니다.
+| IRIS Studio 의 **챠트-테이블** 의 sql 검색어 결과로 나온 데이터를 **adv heatmap** 명령어로 바로 그릴 수 있습니다.
+| heatmap 챠트를 그릴 수 있는 형태로 데이터를 변환하여 시각화 유형을 heatmap 으로 선택하면 바로 그려집니다.
 
 
 데이터 모델
@@ -53,33 +53,35 @@ Studio예제: 테이블과 검색어 3 (adv sankey)
 
 
 
-테이블 : adv sankey
+테이블 : adv heatmap
 -------------------------------------------
 
 .. code::
 
-    * YEAR=2018   | 
+    * YEAR = 2018   | 
     sql "select *, 
-               CASE WHEN FIRE_CAUSE like '실화%' 
-                    THEN '실화' 
-                    WHEN FIRE_CAUSE like '방화%'
-                    THEN '방화'
-                    ELSE  FIRE_CAUSE  
-               END CAUSE_KIND  
-        from angora" |
-    adv sankey sum(CNT) SPLITROW FIRE_CENTER, FIRE_CAUSE, CAUSE_KIND
+                CASE WHEN FIRE_CAUSE like '실화%' 
+                     THEN '실화' 
+                     WHEN FIRE_CAUSE like '방화%'
+                     THEN '방화'
+                     ELSE  FIRE_CAUSE  
+                END CAUSE_KIND
+    from angora" |
+    stats SUM(CNT) as SUM_CNT by YEAR,FIRE_CENTER, CAUSE_KIND | 
+    adv heatmap sum(SUM_CNT)
+                SPLITROW FIRE_CENTER
+                SPLITCOL CAUSE_KIND COLSIZE 500
 
 
 
-| adv sankey 는 입력으로 받은 데이터(파이프로 전달받은) 를 sankey chart 를 그릴 수 있는 데이터로 변환합니다.
-| 시각화유형을 테이블로 하면 SOURCE, TARGET 필드가 있는 데이터로 변환되며, sankey 를 선택하면 바로 sankey chart 를 그립니다. 
+| adv heatmap 은 입력으로 받은 데이터(파이프로 전달받은) 를 heatmap 을 그릴 수 있는 데이터로 변환합니다.
+| 시각화유형을 테이블로 하면 CAUSE_KIND 컬럼의 값 자체가 컬럼이름으로 변환되는 테이블을 보여 줍니다.
 | 자세한 설명 - 검색어 `adv <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/adv.html>`__ 를 참조하세요.
 
-| SPLITROW 뒤에 나오는 필드가 sankey챠트의 각 NODE이며, FIRE_CENTER -> FIRE_CAUSE -> CAUSE_KIND  로 flow 가 정해집니다.
-| 선의 굵기는 각 NODE -> NODE 일 때의 값을 의미하며, 여기서는 CNT의 합계입니다.
+| X축은 FIRE_CENTER, Y 축은 CAUSE_KIND 의 개별 값으로 heatmap 으로 표현됩니다.
 
-.. image:: images/table_3_10.png
-    :alt: table_3_10
+.. image:: images/table_4_11.png
+    :alt: table_4_11
 
 
 
