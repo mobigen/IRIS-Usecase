@@ -23,7 +23,9 @@ Studio예제: 챠트 - 꺾은선형
 .. image:: images/chart_line_12.png
     :alt: chart_line_12
 
-|
+
+
+| 검색어
 
 
 .. code::
@@ -35,9 +37,9 @@ Studio예제: 챠트 - 꺾은선형
 
 
 
-| 연간 평균 경기수, 평균 타석수를 구합니다.
+| 연간 평균 경기수, 평균 타석수를 구하는 검색어입니다.
 
-|
+
 
 .. image:: images/chart_line_13.png
     :scale: 50%
@@ -49,6 +51,6 @@ Studio예제: 챠트 - 꺾은선형
 
 
 .. image:: images/chart_line_14.png
-    :scale: 50%
+    :scale: 40%
     :alt: chart_line_14
 
