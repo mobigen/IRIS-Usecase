@@ -32,6 +32,7 @@ Multi - 세로 막대 그래프
 
 
 | 2018년 데이터 중에서 TOTAL 컬럼을 제외한 데이터를 대상으로 챠트를 그립니다.
+|
 
 .. image:: images/chart_bar_18.png
     :scale: 70%
@@ -40,7 +41,7 @@ Multi - 세로 막대 그래프
 
 
 | 데이터 및 시각화 설정
-
+|
 
 .. image:: images/chart_bar_19.png
     :scale: 80%
