@@ -167,7 +167,7 @@ Studio 보고서 따라하기
     - 데이터 모델 DEMO_BATTING_NEW 
     - 검색어 구문 해석  : `검색어에 대한 설명 <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/index.html>`__ 참조
 
-    .. code::
+.. code ::
 
         * yearID  = ${combo_1} | fields -PTIME,DECADE
 
@@ -252,13 +252,13 @@ Studio 보고서 따라하기
 
 - 경기수와 타석 데이터를 시계열 챠트로 그립니다.(1)
 
-.. image:: ../images/demo/demo_batting_18.png
+.. image :: ../images/demo/demo_batting_18.png
     :alt: 데이터 - 18
 
 
  - 범례를 클릭하면 챠트에서 해당 범례 데이터를 표시/미표시 할 수 있습니다.
 
-.. image:: ../images/demo/demo_batting_19.png
+.. image :: ../images/demo/demo_batting_19.png
     :alt: 데이터 - 19
 
 

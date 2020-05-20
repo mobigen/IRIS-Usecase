@@ -34,6 +34,7 @@ IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트
 
 - 수원시 동단위 geoJson 데이터
     - IRIS 의 Global Table 로 저장합니다.
+
 .. image:: ../images/map_suwon/sw_dong_data_1.png
     :alt: 데이터 예시 -1
 
@@ -41,6 +42,7 @@ IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트
 
 - 수원시 동단위 인구 데이터
     - IRIS 의 Local Table 로 저장합니다.
+
 .. image:: ../images/map_suwon/sw_dong_data_2.png
     :alt: 데이터 예시 -2
 
@@ -48,6 +50,7 @@ IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트
 
 - 수원시 동단위 외국인 인구 데이터
     - IRIS 의 Local Table 로 저장합니다.
+
 .. image:: ../images/map_suwon/sw_dong_data_3.png
     :alt: 데이터 예시 -3
 
@@ -55,6 +58,7 @@ IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트
 
 - 수원시 동단위 외국인 국적별 분포 데이터
     - IRIS 의 Local Table 로 저장합니다.
+    
 .. image:: ../images/map_suwon/sw_dong_data_4.png
     :alt: 데이터 예시 -4
 
