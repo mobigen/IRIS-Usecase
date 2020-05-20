@@ -20,8 +20,8 @@ Studio예제: 챠트 - 꺾은선형
 -------------------------------------------
 
 
-.. image:: images/table_4_12.png
-    :alt: table_4_12
+.. image:: images/chart_line_12.png
+    :alt: chart_line_12
 
 |
 
@@ -39,16 +39,16 @@ Studio예제: 챠트 - 꺾은선형
 
 |
 
-.. image:: images/table_4_13.png
+.. image:: images/chart_line_13.png
     :scale: 50%
-    :alt: table_4_13
+    :alt: chart_line_13
 
 
 | 챠트에서 Y 축으로 1개의 변수로 챠트를 그릴 수 도 있지만,  여러 개의 변수를 다른 색의 라인으로 그릴 수 있습니다.
 | 이 때는 시각화옵션에서 Y축 데이터를 "모두선택" 으로 지정하면, X축 변수 외에 남아 있는 변수 중에서 숫자형 변수가 모두 설정되어 동시에 여러 라인으로 챠트를 그릴 수 있습니다.
 
 
-.. image:: images/table_4_14.png
+.. image:: images/chart_line_14.png
     :scale: 50%
-    :alt: table_4_14
+    :alt: chart_line_14
 
