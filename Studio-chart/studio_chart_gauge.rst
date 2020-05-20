@@ -33,8 +33,8 @@ Gauge 챠트
 
 
 | SYSLOG 데이터중 HOST = 'tsdn-svr1'  를 대상으로
-| 전체 SYSLOG row count 인  37940 대비 HOST = 'tsdn-svr1' 의 row count 의 비율을 구합니다.
-
+| 전체 SYSLOG row count 인  37940 대비 HOST = 'tsdn-svr1' 의 row count 의 비율을 구하는 검색어입니다.
+| 현재 Gauge chart 는 백분율에 단일 값만 그려집니다.(=> 추후에 normal, minor, major, critical 같은 라벨의 범위를 표시할 수 있게 개선할 예정입니다.)
 
 
 
