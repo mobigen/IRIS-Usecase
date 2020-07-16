@@ -3,30 +3,34 @@
 M/L Classification : Wine 품종 분류하기
 ====================================================================================
 
-3개의 포도 품종으로 만든 와인과 와인의 13개의 특성(feature) 값을 측정한 데이터입니다.
-이 3개의 포도 품종으로 만든 와인들의 특성으로 machine Learning 을 이용하여 분류기(classifier) 를 만들어서 포두 품종을 분류, 예측을 하려고 합니다.
-학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 분류기 모델을 훈련시키고, 
-테스트 데이터로 분류기 모델을 검증합니다.
-
-1차로 13개 feature 전부를 대상으로 
-RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성하고, 모델의 적합성을 검증해 봅니다.
-
+| 데이터는 3개의 포도 품종으로 만든 와인에서 13개의 특성(feature) 값을 측정한 데이터입니다.
+| 13개의 특성값을 machine Learning 의 분류 모델 학습 데이터로 사용하여 포도 품종을 자동 분류하는 분류기(classifier) 를 만들려고 합니다.
 |
+| 데이터 중에서 학습데이터 70%, 테스트 데이터 30% 로 나누어서 학습데이터로 훈련시키고, 
+| 테스트 데이터로 생성된 분류기 모델의 정확도를 검증합니다.
+
+| 1차로 13개 feature 전부를 대상으로 
+| RandomForest Classification 과 DecisionTree 알고리즘으로 각각의 모델을 생성하고, 두 모델의 정확도를 테스트데이터로 비교해 봅니다.
 
 
 .. contents::
     :backlinks: top
 
-|
-|
 
 ------------------------------
 데이터 준비
 ------------------------------
 
-'''''''''''''''''''''''''''''''''''
-데이터 다운로드 및 분리
-'''''''''''''''''''''''''''''''''''
+| 와인데이터의 출처 사이트에서 직접 csv 파일로 다운받아서 training data 와 test data 로 분리하는 방법과
+| **IRIS Analyzer** 에서 데이터모델을 설정하여 training data, test data 를 csv 파일을 바로 다운로드하는 방법을 각각 설명합니다. 
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+출처 사이트에서 데이터 다운로드 및 분리
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+| 와인데이터의 출처 사이트에서 직접 csv 를 다운받아서 training data 와 test data 로 분리하는 방법을 설명합니다.
+
 
 - 출처 : `UCI Machine Learning Repository <http://archive.ics.uci.edu/ml/datasets/Wine>`__  의 WINE 데이터
 
@@ -58,28 +62,34 @@ RandomForest Classification 과 DecisionTree 알고리즘으로 모델을 생성
     :alt: 데이터 - 01
 
 |
-|
 
-- 학습데이터와 테스트데이터 파일을 IRIS 의 **HDFS브라우저** 메뉴의  **MinIO** 를 선택하여 업로드합니다.
+- 학습데이터와 테스트데이터 파일을 IRIS 의 **파일브라우저** 메뉴의  **MinIO** 를 선택하여 업로드합니다.
     - MinIO 에 데이터 업로드하기 : `MINIO 에 업로드하기 <http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#minio>`__
     
 
-|
-|
-
-'''''''''''''''''''''''''''''''''''
-데이터모델 만들기 - MinIO
-'''''''''''''''''''''''''''''''''''
 
 - 데이터모델 메뉴에서 MinIO 에 저장된 Train_wine_data.csv,  Test_wine_data.csv 를 데이터모델로 생성합니다.
-    - DEMO_TRAIN_WINE ,  DEMO_TEST_WINE 
+    - 예) DEMO_TRAIN_WINE ,  DEMO_TEST_WINE 
     - 숫자형 데이터는 데이터 타입을 TEXT 에서 REAL 로 변경하여 데이터 모델을 생성합니다.
 
 .. image:: ../images/demo/ml_cls_02.png
     :alt: 데이터 - 02
 
-|
-|
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+IRIS Analyzer 에서 파일로 다운로드하기
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+| IRIS에는 모든 사용자에게 공유된 데이터모델들이 있습니다. 
+| 데이터모델 EDU_TRAIN_WINE, EDU_TEST_WINE 이 와인데이터를 7:3 으로 분리하여 학습데이터, 테스트데이터로 분리하여 생성한 데이터모델입니다.
+
+- IRIS Analyzer 에서 EDU_TRAIN_WINE 를 선택한 후 전체를 조회한 후 **내보내기**  클릭  
+
+.. image:: ../images/demo/ml_cls_11.png
+    :scale: 40%
+    :alt: 다운로드 - 11
+
+- 로컬 PC 로 다운로드 또는 IRIS HDFS 에 저장하기
 
 
 ----------------------------------------------------------------
@@ -87,9 +97,9 @@ Machine Learining 모델 만들기
 ----------------------------------------------------------------
 
 
-'''''''''''''''''''''''''''''
-데이터 전처리
-'''''''''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+스케일링 ( scaling )
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - wine 별로 측정한 13개의 feature 데이터를 스케일링 합니다. 여기서는 minmax scaling 을 사용합니다.
 - 사용 command : `scaler <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/scaler.html>`__
@@ -97,7 +107,7 @@ Machine Learining 모델 만들기
 .. code:: 
 
     데이터 스케일링은 데이터 전처리 과정의 하나로 모델 알고리즘 학습에서 중요한 부분입니다.
-    데이터 스케일링을 해주는 이유는 데이터의 값이 너무 크거나 작은 경우에는 학습과정에서 0으로 수렴하거나 무한으로 발산해버릴 수 있기 때문입니다.
+    데이터 스케일링을 해주는 이유는 각 데이터의 값이나 단위 등이 너무 크거나 작은 경우에는 학습과정에서 0으로 수렴하거나 무한으로 발산해버릴 수 있기 때문입니다.
     현재 구현된 스케일링은 standard, minmax 가 있습니다.
 
     1) Standard 스케일러
@@ -111,7 +121,8 @@ Machine Learining 모델 만들기
 
 .. code::
 
-    * | scaler minmax  Alcohol to Alcohol_s, Malic_acid to Malic_acid_s. Ash to Ash_s
+    * | scaler minmax  Alcohol to Alcohol_s, Malic_acid to Malic_acid_s,  Ash to Ash_s, ...
+    
 
 
 
@@ -119,9 +130,34 @@ Machine Learining 모델 만들기
 - 원본 데이터와 minmax 스케일링 한 데이터 예시
 
 .. image:: ../images/demo/ml_cls_03.png
+    :scale: 60%
     :alt: 데이터 - 03
 
-|
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+indexer 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+| indexer 는 숫자형 또는 문자형으로 되어 있는 라벨 컬럼을 0,1,2,,  처럼 0부터 시작하는 정수로 변환합니다.
+| wine 의 포도품종 컬럼인 classId 는 1, 2, 3 으로 숫자로 품종을 구분했습니다. 
+| 그리고 indexer 명령어 실행 결과로 새로 만들어진 라벨 컬럼 classId_s 는 0, 1, 2 가 됩니다.
+
+.. csv-table::
+    :header: "classId", "classId_s"
+
+    "1", "1"
+    "2", "0"
+    "3", "2"
+    
+
+| 라벨에 해당하는 컬럼이 숫자형으로 되어 있더라도 0, 1, 2,,,  로 되어 있지 않다면 indexer 를 사용해야 합니다. 
+
+- 검색어 예시
+
+.. code::
+
+  ... | scaler minmax .... | indexer classId to classId_s 
+
 
 
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -147,32 +183,37 @@ RandomForest classification 모델 학습
                       Flavanoids to Flavanoids_s, Nonflavanoid_phenols to Nonflavanoid_phenols_s, 
                       Proanthocyanins to Proanthocyanins_s, color_intensity to color_intensity_s, 
                       Hue to Hue_s, OD280_OD315 to OD280_OD315_s, Proline to Proline_s 
+      | indexer classId to classId_s
       | fit RandomForestClassification 
             FEATURES 
                     Alcohol_s,Malic_acid_s,Ash_s, Alcalinity_ash_s,Magnesium_s,
                     Phenols_s,Flavanoids_s, Nonflavanoid_phenols_s,Proanthocyanins_s,color_intensity_s,Hue_s, OD280_OD315_s,Proline_s 
-            LABEL classId maxDepth=20 
-            INTO DEMO_02_RF_CLASSIFICATION_WINE
+            LABEL classId_s maxDepth=20 
+            INTO DEMO_0713_2_RF_CLASSIFICATION_WINE
 
 
 - command 의 의미 
 
 .. code::
 
-    13개 feature 를 minmax 스케일링으로 전처리하고 RandomForestClassification 알고리즘으로 fit
-     - FEATURE 는 13개의 스케일링 변환된 컬럼
-     - LABEL 은 품종을 나타내는 classId 컬럼
-     - fit 으로 학습된 모델은 DEMO_02_RF_CLASSIFICATION_WINE 이라는 모델이름으로 저장
+    13개 feature 컬럼, classId 를 select 후에
+     - scaler minmax  A to B :  컬럼 A 를 minmax 스케일링한 컬럼 B 생성
+     - indexer C to D : 라벨 컬럼 C 를 0,1,2,, 로 인덱싱한 컬럼 D 생성
+     - RandomForestClassification 알고리즘으로 fit 명령어로 모델링
+
+     - FEATURE 뒤에는 13개의 스케일링 변환된 컬럼을 쉼표로 나열
+     - LABEL 뒤에는 품종을 나타내는 classId_s 컬럼
+     - fit 으로 학습된 모델은 DEMO_0713_2_RF_CLASSIFICATION_WINE 이라는 모델이름으로 IRIS 내부에 저장
 
 
 - IRIS Analyzer 의 **검색** 메뉴에서 **분석 탬플릿** 인 **DEMO_RF_분류_와인_TRAIN**  이 배포되어 있습니다.
-    - 학습용 wine데이터 모델과 모델 생성 code 가 같이 저장되어 있습니다. 더블클릭하여 검색 메뉴로 불러오기를 할 수 있습니다.
+    - 학습용 wine데이터 모델과 모델 생성 검색어가 저장되어 있어 더블클릭으로 Analyzer 메뉴로 불러오기를 할 수 있습니다.
     - 모델 결과는 동일한 이름을 사용할 수 없으므로 그대로 실행하면 에러가 발생합니다.
-    - **fit** 으로 새 모델을 생성하려면 DEMO_02_RF_CLASSIFICATION_WINE 가 아닌 다른 모델 이름으로 수정해서 실행하시기 바랍니다.
+    - **fit** 으로 새 모델을 생성하려면 DEMO_0713_2_RF_CLASSIFICATION_WINE 가 아닌 다른 모델 이름으로 수정해서 실행하시기 바랍니다.
 
 
 |
-|
+
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 모델 평가
@@ -224,7 +265,7 @@ RandomForest classification 모델 학습
 
 .. code::
 
-    mlmodel summary DEMO_02_RF_CLASSIFICATION_WINE
+    mlmodel summary DEMO_0713_2_RF_CLASSIFICATION_WINE
 
 
 .. image:: ../images/demo/ml_cls_09.png
@@ -237,15 +278,17 @@ RandomForest classification 모델 학습
 테스트 데이터의 품종 예측하기
 '''''''''''''''''''''''''''''''''''''''''''''
 
-학습데이터로 훈련한 모델 DEMO_02_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
+학습데이터로 훈련한 모델 DEMO_0713_2_RF_CLASSIFICATION_WINE 로 테스트 데이터의 결과를 예측합니다.
 
 `predict <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/predict.html>`__  command 를 이용하여 테스트 데이터의 품종을 예측하고, 얼마나 많은 수의 정답을 예측했는지 알아 봅니다.
 
 
-테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_02_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
+테스트데이터에서 품종인 classId 를 제외한 13개 feature 데이터를 DEMO_0713_2_RF_CLASSIFICATION_WINE 모델에 input으로 주고, 
 output 으로 품종을 예측합니다.
 
-품종의 예측값과 실제값을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
+**prediction**  변수가 분류기를 통해 예측한 포도품종 예측값입니다.
+
+품종의 예측값(prediction)과 실제값(classId_s) 을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
 
 |
 
@@ -266,7 +309,8 @@ output 으로 품종을 예측합니다.
                      Hue to Hue_s,
                      OD280_OD315 to OD280_OD315_s,
                      Proline to Proline_s 
-    |  predict  DEMO_02_RF_CLASSIFICATION_WINE   
+    |  indexer classId to classId_s
+    |  predict  DEMO_0713_2_RF_CLASSIFICATION_WINE   
                 Alcohol_s,Malic_acid_s,  Ash_s, 
                 Alcalinity_ash_s,  Magnesium_s,  Phenols_s,  
                 Flavanoids_s, Nonflavanoid_phenols_s,  Proanthocyanins_s,
@@ -275,39 +319,30 @@ output 으로 품종을 예측합니다.
 |
 
 
-.. image:: ../images/demo/ml_cls_05.png
-    :alt: 데이터 - 05
-
-|
-|
-
 ''''''''''''''''''''''''''''''''''''''''''''''
 예측 결과 분석
 ''''''''''''''''''''''''''''''''''''''''''''''
 
 테스트 데이터에서 품종 3번은 14개 와인 모두 예측을 하지 못했습니다.
 
-|
-
 .. image:: ../images/demo/ml_cls_06.png
     :alt: 데이터 - 06
 
 
-|
+| 원인을 알아보고 더 성능 좋은 모델을 만들기 위해서는, 정확도 높은 모델이 나올 때 까지 
+| 2차, 3차 학습 등 1차 학습과 비슷한 과정들이 추가로 필요합니다.
 
-원인을 알아보고 더 성능 좋은 모델을 만들기 위해서는, 정확도 높은 모델이 나올 때 까지 
-2차, 3차 학습 등 1차 학습과 비슷한 과정들이 추가로 필요합니다.
 
-|
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-참고 : 보고서 분류_RF_DC_1차시험_와인데이터
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`분류_RF_DC_1차시험_와인데이터 <http://b-iris.mobigen.com:80/studio/exported/abcb0c12b8ee4b68a0e393820cf48b2cf3219a48018149ffb23a87ba19c15460>`__ 는 
-테스트 데이터를 RandomForest 와 DecisionTree 모델로 각각 예측한 결과를 bar-chart 로 그리고, 
-13개 feature 의 분포를 그린 box-plot 들을 링크로 만든 보고서 입니다.
+
+참고 : EDU_NEW_분류_RF_DC_1차시험_와인데이터_데이터객체_indexer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`EDU_NEW_분류_RF_DC_1차시험_와인데이터_데이터객체_indexer <http://b-iris.mobigen.com:80/studio/exported/89932d99e26248348389e02079f28260aa7ccfb1fd1242ad99b405e01edbe2f5>`__ 는 
+
 
 
 .. image:: ../images/demo/ml_cls_07.png
+    :scale: 100%
     :alt: 데이터 - 07
