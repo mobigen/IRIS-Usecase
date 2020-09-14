@@ -15,3 +15,4 @@ IRIS Analyzer와 Studio를 활용한 다양한 분석수행과 결과를 보고�
     ml-serving/index.rst
     ml/index.rst 
     BLOG/index.rst
+    AnomalyDetection/index.rst
