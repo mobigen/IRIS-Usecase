@@ -10,3 +10,4 @@
     :hidden:
 
     AnomalyDetection_202009_v01.rst
+    AnomalyDetection_202009_v02.rst
