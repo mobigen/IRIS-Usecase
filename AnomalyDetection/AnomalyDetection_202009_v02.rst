@@ -153,7 +153,7 @@
 
 
 .. image:: ./images/ADE_27.png
-    :scale: 100% 
+    :scale: 60% 
     :alt: ADE_27
 
 
