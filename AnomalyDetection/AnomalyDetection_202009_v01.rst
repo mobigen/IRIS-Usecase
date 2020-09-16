@@ -125,11 +125,11 @@ Anomaly Detection Techniques 종류
 **분류(Classigfication) 기반 이상 탐지 기법**
 
 | 분류는 기계 학습 방법 중 ``Supervised(지도)`` 학습의 대표적인 방법입니다.
-| 학습(훈련) 할 데이터에 어느 클래스에 속하는지에 대한 정답 label이 있어서 분류기(classifier)를 학습(training)한 뒤, 학습된 모형으로 새로운 데이터가 각각의 클래스에 속할 확률을 예측하는 방법.
+| 학습(훈련) 할 데이터에 어느 클래스에 속하는지에 대한 정답 label이 있어서 분류기(classifier)를 학습(training)한 뒤, 학습된 모형으로 새로운 데이터가 각각의 클래스에 속할 확률을 예측하는 방법입니다.
 | 정답 label 의 개수에 따라 multi-class 와 one-class 로 나뉩니다.
 | 분류기가 각 정상 클래스와 나머지를 구분하도록 학습시키고, 어느 클래스에도 포함되지 않는 데이터를 "이상값" 으로 처리합니다.
 
-* 분류기 생성 알고리즘
+* 대표적인 분류기 생성 알고리즘의 예
     * 신경망(Neural Network) : multi-class, one-class 분류에 모두 이용
     * Bayesian networks : multi-class 분류
     * SVM(Support vector machine) 기반 : one-class 분류 
@@ -165,7 +165,7 @@ Anomaly Detection Techniques 종류
 * 정규 모형 기반
     * 데이터가 정규모형에서 생성된 것으로 가정하고, 최대우도추정량(maximum likelihood estimator, `MLE <https://en.wikipedia.org/wiki/Maximum_likelihood_estimation>`__) 를 사용.
     * 각 데이터와 추정된 평균값 사이의 거리가 "이상 score" 가 되고, 이상 score 의 경계를 정해서 이상값 여부를 결정합니다.
-    * 거리의 정의와 경계를 구하는 방법들이 다양하게 제인되어 있습니다.
+    * 거리의 정의와 경계를 구하는 방법들이 다양하게 제안되어 있습니다.
         * 상자그림
         * Grubbs 검정
         * Mahalanobis 거리
@@ -204,9 +204,13 @@ Anomaly Detection Techniques 종류
 **참고 문헌**
 
 이상탐지, 시계열 분석 https://h3imdallr.github.io/2017-06-20/anomaly_detection
-anomaly detection 의 최신 트랜드 https://github.com/hoya012/awesome-anomaly-detection
+
+`anomaly detection 의 최신 트랜드 <https://github.com/hoya012/awesome-anomaly-detection>`__
+
 한국보건사회연구원 정책보고서 https://www.kihasa.re.kr/web/publication/research/view.do?menuId=45&tid=71&bid=12&division=001&ano=2401
+
 https://medium.com/@john_analyst/isolation-forest%EB%A5%BC-%ED%86%B5%ED%95%9C-%EC%9D%B4%EC%83%81%ED%83%90%EC%A7%80-%EB%AA%A8%EB%8D%B8-9b10b43eb4ac
-데이터 과학을 위한 R 알고리즘 https://statkclee.github.io/r-algorithm/r-mle-normal.html
+
+`데이터 과학을 위한 R 알고리즘 <https://statkclee.github.io/r-algorithm/r-mle-normal.html>`__ https://statkclee.github.io/r-algorithm/r-mle-normal.html
 
 

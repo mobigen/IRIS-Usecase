@@ -67,7 +67,7 @@
 
 
 .. image:: ./images/ADE_32.png
-    :scale: 100% 
+    :scale: 60% 
     :alt: ADE_32
 
 
@@ -113,7 +113,7 @@
 
 
 .. image:: ./images/ADE_23.png
-    :scale: 100% 
+    :scale: 60% 
     :alt: ADE_23
 
 
