@@ -138,10 +138,8 @@ anomalies
     :alt: 검색 데이터 -6
 
 
-
-
 ------------------
-실행 결과
+실행 구문 
 ------------------
 
 | 매 10분마다 빠진 값을 0 으로 채운 후 anomalies 를 실행합니다.
@@ -155,10 +153,58 @@ anomalies
   | sort +dategroup 
   | fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT  
   | anomalies dategroup CNT by=HOST  
+  | typecast dategroup  'timestamp' |  where HOST = 'tsdn-svr1'
+
+
+| 그리고 입력 데이터 전체를 대상으로 이상값을 판단합니다.
+
+
+-------------------------------------------------
+알고리즘 설명
+-------------------------------------------------
+
+| anomalies 의 default 알고리즘인 basic 을 적용합니다.
+
+**적용 검색어**
+
+.. code::
+
+  anomalies dategroup CNT by=HOST
+
+
+| ``alg = basic``   : basic 알고리즘 적용
+| ``by = HOST``     : HOST 별로 그룹핑한 value 별로 anomalies 적용
+| ``bound = 2``     : 임계치의 범위를 z 값의 2배수로 적용
+| ``direct = both`` : 임계치 상한(upper) 보다 큰 값, 하안(lower) 보더 작은 값을 이상값으로 판정
+
+
+**basic 에서 임계치 계산 방법**
+
+.. code::
+
+    window_size = 10 으로 moving average 로 변환합니다.
+    confidence = 1.959964 * 이동평균값의 표준편차 * bound 값(=2)
+    상한 임계치(upper limit) = 이동평균 + confidence
+    하한 임계치(lower limit) = 이동평균 - confidence
+
+| 상한 / 하한 임계치를 벗어난 값을 이상값 즉 anomaly = true 로 표시합니다.
+
+
+------------------
+실행 결과
+------------------
+
+
+.. code::
+
+  * | WHERE LEVEL != 'info' |  stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
+  | sort +dategroup 
+  | fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT  
+  | anomalies dategroup CNT by=HOST  
   | typecast dategroup   'timestamp' |  where HOST = 'tsdn-svr1'
 
 
-| 검색 결과
+| 결과
 
 .. image:: ../images/anomalies/anomalies_data07.png
     :scale: 60%
@@ -192,4 +238,28 @@ anomalies
 | 이 상한선, 하한선은 이상치를 판정하는 기준선입니다.(알고리즘마다 약간씩 다른 기준선 계산방식이 있습니다)
 
 
+--------------------------
+다른 알고리즘 결과
+--------------------------
+
+| alg = robust
+
+.. code::
+
+   * | WHERE LEVEL != 'info'  and HOST = 'tsdn-svr1' 
+  | stats  COUNT(*)  as CNT  by  date_group(DATETIME, "10M") , HOST  
+  | sort +dategroup 
+  | fill_zero freq=600 stime=20191210090000  etime=20191210120000  time_column=dategroup group_key=HOST value=CNT  
+  | anomalies dategroup CNT by=HOST alg=robust  | typecast dategroup   'timestamp'
+
+
+.. image:: ../images/anomalies/anomalies_data42.png
+    :scale: 60%
+    :alt: 검색 데이터 42
+
+
+
+.. image:: ../images/anomalies/anomalies_data43.png
+    :scale: 60%
+    :alt: 검색 데이터 43
 
