@@ -1,4 +1,4 @@
-이상 탐지( Anomaly Detection )
+이상 탐지 ( Anomaly Detection )
 =======================================
 
 
