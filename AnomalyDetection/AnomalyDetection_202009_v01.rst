@@ -4,7 +4,7 @@
 개요
 ------------------
 
-| 이상 탐지(Anomaly Detection)란 예상되거나 기대하는 관찰값, item, event 가 아닌 데이터 패턴(이상징후,anomalies), 개체(이상값) 등 을 찾아내는 것을 의미합니다.
+| 이상 탐지 ( Anomaly Detection )이란 예상되거나 기대하는 관찰값, item, event 가 아닌 데이터 패턴 ( 이상징후 , anomalies, 이상 징후 ), 개체(이상값) 등 을 찾아내는 것을 의미합니다.
 | 이상값은 "정상"이 아닌 값인데, "정상" 에 대한 정의는 적용 분야 및 문제마다 다르게 정의될 수 있습니다. 
 | 이상값은 한글 용어로 이상치, 이상값, 이상 징후, 극단값, 비정상 등 으로 부르고, 영어로 anomalies, outliers, novelties, noise, deviations, exceptions 와 같은 표현을 사용합니다.
 | 용어의 혼동을 막기 위해 여기서는 주로 이상 징후, 이상값, anomal data, anomalies 로 표시하겠습니다.
