@@ -48,11 +48,11 @@ basic 알고리즘
    𝜒 :  개별 입력 값
 
 
-.. image:: images/Normal_distribution_and_scales
+.. image:: images/Normal_distribution_and_scales.gif
    :scale: 60%
    :alt: anomalies normal dist.
 
-그림 출처 : https://ko.wikipedia.org/wiki/표준_점수
+그림 출처 : `https://ko.wikipedia.org/wiki/표준_점수`
 
 
 
