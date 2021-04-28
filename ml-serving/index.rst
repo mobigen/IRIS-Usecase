@@ -6,6 +6,5 @@ IRIS 외부에서 만든 딥러닝 학습 모델(tensorFlow 2.4) 을 tensorFlow 
 .. toctree::
     :hidden:
 
-    mnist_number.rst
     mnist_clothes.rst
     multi_in_out.rst
