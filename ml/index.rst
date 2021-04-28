@@ -7,3 +7,4 @@ IRIS Discovery Service에서 만든 Spark ML 기반의 기계 학습 명령어�
     :hidden:
 
     ML_boston_housing.rst
+    ML_FPGrowth.rst
