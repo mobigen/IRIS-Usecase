@@ -16,7 +16,7 @@ FP(Frequent-Pattern) Growth 알고리즘은 데이터 그룹간에 빈번하게 
 
 예제 데이터는  Kaggle 에서 제공하는 "Dataset for Apriori and FP growth Algorithm"  입니다.(DataSetA.csv)
 
-특정 마켓에서 각각의 결재(transaction) 당 구매한 아이템목록입니다. (=> transaction 단위로 구매한 목록) 
+특정 마켓에서 각각의 transaction 당 구매한 아이템목록입니다. 
 구매한 아이템 목록의 빈발 패턴을 분석하면, 구매 목록과 함께 많이 구매하는 다른 아이템 목록을 같이 출력할 수 있습니다.
 
 데이터 출처 : https://www.kaggle.com/newshuntkannada/dataset-for-apriori-and-fp-growth-algorithm
@@ -74,10 +74,10 @@ fit 에서 저장한 학습 모델 ``EDU_MODEL_FPGrowth_01`` 로 predict 를 실
 
 - 결과 예시
 
-.. image:: ../images/ml/usecase22.png
+.. image:: ../images/ml/usecase23.png
   :scale: 40%
-  :alt: usecase 22
+  :alt: usecase 23
 
 
-ITEM_LIST 즉 구매목록에 Sugar,Butter,Milk 가 있을 때
-[Lassi, Coffee Powder, Sweet, Bread, Ghee, Yougurt, Cheese, Tea Powder, Panner] 아이템이 같이 있는 패턴이 많았다고 예측한 결과입니다.
+ITEM_LIST 즉 구매목록에 Sugar,Coffee Powder,Butter,Yougurt 가 있을 때
+[Tea Powder, Cheese, Sweet, Panner, Bread, Lassi, Ghee, Milk] 아이템이 같이 있는 패턴이 많았다고 예측한 결과입니다.
