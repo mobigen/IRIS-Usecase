@@ -6,7 +6,7 @@ K-means clustering 은 기계 학습 분야의 알고리즘 중 대표적인 비
 데이터 포인트를 미리 정의 된 수의 클러스터(=k)로 만드는 가장 일반적인 클러스터링(군집화) 알고리즘 중 하나입니다.
 
 
-IRIS 에서는 ``K-means clustering``  을 하는 명령어가 ``kmeans`` , `fit KMeans` 로 2개가 있습니다.
+IRIS 에서는 ``K-means clustering``  을 하는 명령어가 ``kmeans`` , ``fit KMeans`` 로 2개가 있습니다.
 
 - kmeans 
     - 군집화 학습 모델을 따로 저장하지 않습니다.
@@ -27,7 +27,7 @@ IRIS 에서는 ``K-means clustering``  을 하는 명령어가 ``kmeans`` , `fit
 
 
 
-아래 예제는  ML 모델을 학습하고 저장하는 `fit KMeans` 로 붓꽃(iris) 데이터를 3개의 종으로 clustering 하는 예제입니다.
+아래 예제는  ML 모델을 학습하고 저장하는 ``fit KMeans`` 로 붓꽃(iris) 데이터를 3개의 으로 clustering 하는 예제입니다.
 
 
 
@@ -85,7 +85,7 @@ fit 에서 저장한 학습 모델 ``Kmeans_IRIS_0308`` 로 predict 를 실행�
    * | predict Kmeans_IRIS_0308 Sepal_Length,Sepal_Width,Petal_Length,Petal_Width
 
 
-predict 명령어로 Sepal_Length,Sepal_Width,Petal_Length,Petal_Width 필드만으로  3개의 cluster(Species) 로 구분할 수 있는지 예측합니다.
+``predict`` -  Sepal_Length,Sepal_Width,Petal_Length,Petal_Width 4개의 측정 필드 데이터를 입력받아서 3개의 cluster 로 나누어 봅니다. 
 
 
 - 결과 예시
@@ -99,7 +99,7 @@ predict 명령어로 Sepal_Length,Sepal_Width,Petal_Length,Petal_Width 필드만
 -----------------------------------------------------------------------------------------
 
 train 데이터를 대상으로  ``Kmeans_IRIS_0308``  clustering 학습 모델을 ``eval``  로 검증한 결과
-105개 데이터 중에서  13 개가 다른 결과로 clustering 되어 약 87.62%  의 정확도를 보였습니다.
+105개 데이터 중에서  13 개가 다른 그룹으로 clustering 되어 약 87.62%  의 정확도를 보였습니다.
 
 .. code-block:: none
 
@@ -128,7 +128,7 @@ train 데이터를 대상으로  ``Kmeans_IRIS_0308``  clustering 학습 모델�
 정확도를 높이기 위해 feature 선별하기
 ---------------------------------------------------------------------------------------------------------
 
-정확도를 더 높이기 위해 4개의 feature 중에서 cluster  내  분산이  큰 feature(= 종 간에 차이가 뚜렷하지 않은) 인  "Sepal_Length"  를 모델링 feature 에서 제외하여 3개의 feature  로 clustering 을 진행합니다.
+정확도를 더 높이기 위해 4개의 feature 중에서 cluster  내  분산이  큰 feature(= 종 간에 차이가 뚜렷하지 않은) 인  "Sepal_Length"  를 모델링에 사용하는 feature 에서 제외하여 3개의 feature 만으로 clustering 을 진행합니다.
 
 - 3개 종간의 feature 별 표준편차 구하기
 
@@ -148,7 +148,7 @@ train 데이터를 대상으로  ``Kmeans_IRIS_0308``  clustering 학습 모델�
 Sepal_Length 제외하고 다시 학습 모델 생성(fit) 
 ----------------------------------------------------------------------------------------------------
 
-feature 3개로 군집화 모델 학습하고, ``kmeans_iris_0309``  라는 이름으로 저장합니다.
+Sepal_Length 제외한 feature 3개로 군집화 모델을 학습하고, ``kmeans_iris_0309``  라는 이름으로 저장합니다.
 
 
 .. code-block:: none
@@ -159,8 +159,9 @@ feature 3개로 군집화 모델 학습하고, ``kmeans_iris_0309``  라는 이�
 predict
 ----------------------------------
 
-Sepal_Width,Petal_Length,Petal_Width 3개의 feature 로 clustering 한 모델로 clustering 실행 후 예측 결과를 세로막대 챠트로 그려봅니다.
+예측 결과를 시각적으로 확인하기 위해 세로막대 챠트로 그려봅니다.
 
+- 검색어
 
 .. code-block:: none
 
@@ -197,4 +198,5 @@ Sepal_Width,Petal_Length,Petal_Width 3개의 feature 로 clustering 한 모델�
   
 
 Sepal_Length 필드를 제외하고 학습한 모델 "kmeans_iris_0309" 의 정확도가 더  높게 나옵니다.
-정확한 모델 생성의 조건은 무조건 많은 feature 필드를 확보하는 것이 아니라, 모델링에 적절한 feature 필드를 선별하여 확보하는 것임을 알 수 있습니다.  
+정확한 모델 생성의 조건은 무조건 많은 feature 필드를 확보하는 것이 아니라, 모델링에 적절한 feature 필드를 선별하는 것임을 알 수 있습니다.
+
