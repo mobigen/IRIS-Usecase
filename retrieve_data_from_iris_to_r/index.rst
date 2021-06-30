@@ -36,8 +36,8 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 -----------------------------------------------------
 
 - RJDBC 패키지를 이용합니다. 
-    - id / passwd = myiris / myiris 
-    - iris DB 접속 정보 : 192.168.100.180:5050
+    - id / passwd = id / password 
+    - iris DB 접속 정보 : xxx.xxx.xxx.xxx/xxxx
     - JDBC path 지정
 
 .. code::
@@ -74,7 +74,7 @@ RJDBC 를 이용하여 IRIS DB 접속하기
   drv <- RJDBC::JDBC("com.mobigen.iris.jdbc.IRISDriver",
                      "/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar", 
                       identifier.quote= "`")
-  conn <- RJDBC::dbConnect(drv, "jdbc:iris://192.168.100.180:5050/myiris", "myiris", "myiris")
+  conn <- RJDBC::dbConnect(drv, "jdbc:iris://xxx.xxx.xxx.xxx:xxx/myiris", "id", "password")
 
 
 |
