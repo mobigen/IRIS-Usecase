@@ -90,8 +90,6 @@ Machine Learining 모델 만들기
 데이터 전처리 : 스케일링 (scaling)
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-|
-
 - wine 별로 측정한 13개의 feature 데이터를 스케일링 합니다. 여기서는 minmax scaling 을 사용합니다.
 - DSL 명령어 : `scaler <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/scaler.html>`__
 
@@ -101,7 +99,7 @@ Machine Learining 모델 만들기
     
     예를 들어, 
     특성값 X_1 : 0<= X_1 <= 1 
-    특성값 X_2 : 10000000 <= X2 <= 1000000000000
+    특성값 X_2 : 10000000 <= X_2 <= 1000000000000
     종속변수 Y : 1000000 <= Y <= 100000000
     
     특성값 X_1, X_2 가 스케일 차이가 클 때, 값의 범위가 작은 X_1 은 종속변수 Y 에 그다지 영향을 주지 않는다는 결론이 나올 수 있습니다.
@@ -125,19 +123,20 @@ Machine Learining 모델 만들기
 
     * | scaler minmax  Alcohol to Alcohol_s, Malic_acid to Malic_acid_s, Ash to Ash_s, ...
     
-|
+
 
 - 원본 데이터와 minmax 스케일링 한 데이터 예시
 
 
 .. image:: ../images/demo/ml_cls_03.png
+    :scale: 100%
     :alt: 데이터 - 03
 
-|
+
 
 **스케일러 객체 저장**
 
-| ``개뱔 예정`` 인 기능입니다.
+| ``개발 예정`` 인 기능입니다.
 | 학습 데이터 대상으로 만든 스케일러 객체를 저장합니다. 이 스케일러 객체로 검증 데이터의 특성값을 스케일링해야 합니다.
 
 
@@ -212,18 +211,15 @@ Machine Learining 모델 만들기
      - indexer  C to D : 라벨 컬럼 C 를 0,1,2,, 로 인덱싱하여 컬럼 D 로 생성
      - RandomForestClassification 알고리즘으로 ``fit`` 명령어로 모델링
 
-     - ``FEATURES`` 뒤에는 13개의 스케일링 변환된 컬럼을 쉼표로 나열
-     - ``LABEL`` 뒤에는 품종을 나타내는 classId_s 컬럼
-     - ``fit`` 으로 학습된 모델은 **DEMO_0713_2_RF_CLASSIFICATION_WINE** 이라는 모델이름으로 IRIS 내부에 저장
+     - FEATURES 뒤에는 13개의 스케일링 변환된 컬럼을 쉼표로 나열
+     - LABEL 뒤에는 품종을 나타내는 classId_s 컬럼
+     - fit 으로 학습된 모델은 **DEMO_0713_2_RF_CLASSIFICATION_WINE** 이라는 모델이름으로 IRIS 내부에 저장
 
 
 - IRIS Analyzer 의 **검색** 메뉴에서 **분석 탬플릿** 인 **DEMO_RF_분류_와인_TRAIN**  이 배포되어 있습니다.
     - 학습용 wine데이터 모델과 모델 생성 검색어가 저장되어 있어 더블클릭으로 Analyzer 메뉴로 불러오기를 할 수 있습니다.
     - 모델 결과는 동일한 이름을 사용할 수 없으므로 그대로 실행하면 에러가 발생합니다.
     - **fit** 으로 새 모델을 생성하려면 DEMO_0713_2_RF_CLASSIFICATION_WINE 가 아닌 다른 모델 이름으로 수정해서 실행하시기 바랍니다.
-
-
-|
 
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -284,7 +280,6 @@ Machine Learining 모델 만들기
     :alt: 데이터 - 09
 
 
-|
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 모델 검증 : 테스트 데이터로 품종 예측하기
@@ -302,7 +297,6 @@ output 으로 품종을 예측합니다.
 
 품종의 예측값(prediction)과 실제값(classId_s) 을 비교하여 모델의 정확도를 알아 보고, 분류 정확도가 더 높은 모델을 만들기 위한 개선 포인트를 찾아 봅니다.
 
-|
 - 학습 데이터를 대상으로 ``scaler minmax`` 명령어로 생성된 ``스케일러 객체`` 를 테스트 데이터에도 적용하여 스케일링 변환을 합니다.
 - 학습 데이터의 indexer 명령어의 결과로 생성된 classId 와 classId_s 와 똑같이 테스트 데이터의 classId 를 변환합니다. 
 
