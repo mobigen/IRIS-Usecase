@@ -347,6 +347,7 @@ output 으로 품종을 예측합니다.
 
 
 .. image:: ../images/demo/ml_cls_07.png
+    :scale: 100%
     :alt: 데이터 - 07
 
 
