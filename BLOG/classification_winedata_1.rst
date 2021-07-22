@@ -46,10 +46,10 @@ M/L Classification : Wine 품종 분류하기
     7) Flavanoids
     8) Nonflavanoid phenols
     9) Proanthocyanins
-   1)  Color intensity
-   2)  Hue
-   3)  OD280/OD315 of diluted wines
-   4)  Proline
+   10) Color intensity
+   11) Hue
+   12) OD280/OD315 of diluted wines
+   13) Proline
 
 
    
