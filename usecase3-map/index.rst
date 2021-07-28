@@ -8,5 +8,5 @@ IRIS Studio의 지도 기능을 활용하여 여러 종류의 공간정보(서�
 
     IRIS_Studio.map_layer_v03.rst
     IRIS_Studio.map_polygon.v02.rst
-    IRIS_Studio.map_chart.v02.rst
+    IRIS_Studio.map_chart.v03.rst
     DEMO_map_firecenter_01.rst
