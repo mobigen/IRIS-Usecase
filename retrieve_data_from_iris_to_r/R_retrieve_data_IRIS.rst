@@ -1,7 +1,6 @@
-================================================================================
-R-studio : Retrieve data from IRIS DB
-================================================================================
-    
+R 에서 아이리스에 저장된 데이터 가져오기
+=============================================================================
+
 
 -----------------
 목차
@@ -24,13 +23,9 @@ R-studio : Retrieve data from IRIS DB
 설명 
 -----------------
 
-R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고, 
+R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고, 데이터를 insert, select 하는 예제입니다.
 
-데이터를 insert, select 하는 예제입니다.
-
-IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고
-
-데이터를 insert / select 해 봅니다.
+IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고 데이터를 insert / select 해 봅니다.
 
 |
 |
@@ -41,8 +36,8 @@ RJDBC 를 이용하여 IRIS DB 접속하기
 -----------------------------------------------------
 
 - RJDBC 패키지를 이용합니다. 
-    - id / passwd = myiris / myiris 
-    - iris DB 접속 정보 : 192.168.100.180:5050
+    - id / passwd = id / password 
+    - iris DB 접속 정보 : xxx.xxx.xxx.xxx/xxxx
     - JDBC path 지정
 
 .. code::
@@ -79,7 +74,7 @@ RJDBC 를 이용하여 IRIS DB 접속하기
   drv <- RJDBC::JDBC("com.mobigen.iris.jdbc.IRISDriver",
                      "/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar", 
                       identifier.quote= "`")
-  conn <- RJDBC::dbConnect(drv, "jdbc:iris://192.168.100.180:5050/myiris", "myiris", "myiris")
+  conn <- RJDBC::dbConnect(drv, "jdbc:iris://xxx.xxx.xxx.xxx:xxx/myiris", "id", "password")
 
 
 |
@@ -275,11 +270,4 @@ IRIS Local 테이블로부터 데이터 Select
   my_count <- dbGetQuery(conn,"select count(*) from IRIS_LOCAL_TEST_2")
   print(my_count)
 
-|
 
------------------------------------
-R rmd  실행 결과 (PDF)
------------------------------------
-
-
-`Rmd 실행 결과 PDF <https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.utf8.md.pdf>`_
