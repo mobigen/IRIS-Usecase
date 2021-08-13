@@ -29,7 +29,7 @@ RStudio : API 로 IRIS 데이터 가져오기
 | RStudio 에서 API 기반으로 IRIS 데이터모델의 데이터를 가져오는 방법은 `R 에서 IRIS 데이터모델 조회하기 <https://docs.iris.tools/manual/IRIS-Usecase/retrieve_data_from_iris_to_r/query_restapi_datamodel.html#r-iris-restapi>`__ 를 참조하시기 바랍니다.
 
 
-.. code-block::
+.. code::
 
     ## REST API PART : httr, jsonlite
     library(httr)
@@ -68,7 +68,7 @@ RStudio : API 로 IRIS 데이터 가져오기
 
 | IRIS 데이터모델에서 "평균 PM2_5 농도/day" 을 DSL query로 조회합니다. 초미세먼지 농도 측정은 2012년부터 데이터가 존재합니다. 
 
-.. code-block::
+.. code::
 
     q <- "model name = 'EDU_SEOUL_AIR_1987_2020' model_owner = demo  | fillna PM2_5 |  stats avg(PM2_5) as AVG_VAL by YYYYMMDD | sort YYYYMMDD"
     parameters <- list('q' = q, 'size' = SIZE, 'save'= SAVE_FLAG)
@@ -99,10 +99,11 @@ RStudio : API 로 IRIS 데이터 가져오기
 | train 데이터와 test 데이터로 분리합니다.
 | 2020-03-01 이후 데이터를 검증을 위한 ``test_res_df`` 로 두고, 이전 데이터는 예측 모델을 학습할 train 데이터  ``tr_res_df`` 로 분리합니다.
 
-.. code-block::
+.. code::
 
     tr_res_df <- res_df[res_df$YYYYMMDD < '20200301',]
     test_res_df <- res_df[res_df$YYYYMMDD >= '20200301',]
+ 
  
 | R package ``timeSeries`` , ``forecast``  로 ARIMA 모델을 이용하여 예측을 합니다.
 |
