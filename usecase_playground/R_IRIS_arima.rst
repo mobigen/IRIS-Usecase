@@ -106,9 +106,16 @@ RStudio : API 로 IRIS 데이터 가져오기
  
  
 | R package ``timeSeries`` , ``forecast``  로 ARIMA 모델을 이용하여 예측을 합니다.
-|
+
+-----------------------------------------------------------------------------
+IRIS Studio 보고서 만들기 
+-----------------------------------------------------------------------------
+
 | ``Playground >> RStudio`` 에서 생성한 R Markdown 코드의 실행 결과인 html 파일을 다운로드합니다. ->  `NEW_usecase_R_IRIS.html <https://github.com/mobigen/IRIS-Usecase/blob/master/usecase_playground/images/NEW_usecase_R_IRIS.html>`__ 
 | 관련한 내용을 IRIS Studio 에서 보고서 `EDU_R_서울시초미세먼지 지수평활_ARIMA <http://b-iris.mobigen.com:80/studio/exported/9ff2655ef1e547ca8d490bc842c059888998e753e81149b7a505cce9d05d1515>`__  로 생성하였습니다. 
+| 보고서에서는 원본 IRIS 데이터를 직접 파악할 수 있도록 테이블과 챠트로 보여주고, 설명을 추가합니다. 
+| 그리고 분석 결과를 요약하여 보여주고, 일련의 분석 과정 및 통계량, 챠트 등은 결과 html 파일의 링크를 만들어서 별도로 다운로드 받아서 볼 수 있게 합니다.
+
 | 아래는 보고서 일부를 화면 캡처한 것입니다. 
 
 .. image:: images/R_IRIS_Ana_04.png
