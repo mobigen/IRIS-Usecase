@@ -7,4 +7,6 @@ IRIS 의 데이터 모델의 데이터를 DSL 쿼리(필터, 집계, 가공) 로
 .. toctree::
     :maxdepth: 1
     :hidden:
+    
+    R_IRIS_arima.rst
 
