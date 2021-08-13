@@ -109,5 +109,5 @@ RStudio : API 로 IRIS 데이터 가져오기
 | ``Playground >> RStudio`` 에서 생성한 R Markdown 코드의 실행 결과인 html 파일을 다운로드합니다. ->  `NEW_usecase_R_IRIS.html <https://github.com/mobigen/IRIS-Usecase/blob/master/usecase_playground/images/NEW_usecase_R_IRIS.html>`__ 
 | 관련한 내용을 IRIS Studio 에서 보고서 `EDU_R_서울시초미세먼지 지수평활_ARIMA <http://b-iris.mobigen.com:80/studio/exported/9ff2655ef1e547ca8d490bc842c059888998e753e81149b7a505cce9d05d1515>`__  로 생성하였습니다. 참고하시기 바랍니다.
 
-.. image:: images/R_IRIS_result.jpeg
-   :alt: R_IRIS 03
+.. image:: images/R_IRIS_Ana_04.png
+   :alt: R_IRIS 04
