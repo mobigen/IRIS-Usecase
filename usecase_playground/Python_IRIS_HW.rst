@@ -4,8 +4,8 @@ Python - IRIS 데이터모델을 이용한 분석 예제
 
 | ``IRIS Playground >> Jupyter`` 의 **Python 3** notebook 에서 활용하는 예제입니다.
 | API 를 통해 IRIS의 데이터 모델의 데이터를 DSL( `Domain-Specific Languag <http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/index.html#iris-discovery-middleware-service>`__ ) 로 집계 및 필터링을 거친 데이터로 가져옵니다.
-| 이 데이터를 ``IRIS Playground >> Jupyter`` 에서 분석 과정을 진행합니다.
-| 최종 분석 결과는 html 파일로 저장하여  IRIS Studio 보고서에서 링크를 통해 볼 수 있도록 합니다.
+| 이 데이터로 ``IRIS Playground >> Jupyter`` 메뉴에서 Python notebook 으로 예측 모델링 과정을 진행합니다.
+| 결과는 html 파일로 저장하여  IRIS Studio 보고서에서 링크를 통해 볼 수 있도록 합니다.
 |
 
 ----------------------------------------------
